@@ -1,0 +1,62 @@
+---
+format:
+  html:
+    code-block-background: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+
+# Data loading
+We will begin with a subset of dataset from @zeller2014potential. This dataset is from the fecal samples collected from **156 French patients**. In this section, we will load the dataset and explore its basic characteristics.
+
+
+```{python}
+import pandas as pd
+
+# loading tab-seperated data file using pandas and transposing it
+data = pd.read_csv('Nine_CRC_cohorts_taxon_profiles.tsv',sep='\t',header=None).T
+
+# setting the first row as column names and then removing it
+data = data.rename(columns=data.loc[0]).drop(0, axis=0)
+
+# accessing Zeller et al., 2014 dataset
+zeller_db = data.loc[data['dataset_name'] == 'ZellerG_2014',:]
+
+# fetching microbacterial organism information-related columns
+bacteria_colnames = [col for col in data.columns if 'k__Bacteria' in col]
+
+# metadata colnames
+metadata_colnames = ['dataset_name', 'sampleID', 'subjectID', 'body_site', 'study_condition',
+                     'disease', 'age', 'age_category', 'gender', 'country','ajcc','alcohol',
+                     'antibiotics_current_use','curator','disease_subtype','ever_smoke','fobt',
+                     'hba1c','hdl','ldl','location','BMI']
+
+zeller_db.loc[:,'age'] = pd.to_numeric(zeller_db['age'], errors='coerce')
+
+print('Total features: ', zeller_db.shape[1])
+```
+
+For the rest of our analysis, we will focus on five metadata features along with OTUs. Those features are `age`, `gender`, `BMI`, `study_condition` and `ajcc`. 
+
+## Age distribution
+Let's have a look into the age distribution of patients across different study conditions: control, adenoma, and CRC. 
+
+```{python}
+
+import seaborn as sns
+
+sns.boxplot(data = zeller_db, x='study_condition',y='age')
+
+```
+
+## Gender distribution
+
+## BMI distribution
+
+## 
+
+
+
+
+## References{.unnumbered}

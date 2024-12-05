@@ -1,0 +1,134 @@
+[
+  {
+    "objectID": "chapter1.html",
+    "href": "chapter1.html",
+    "title": "1  Data loading",
+    "section": "",
+    "text": "1.1 Age, BMI and gender distribution\nFigure 1.1 shows distributions of age, BMI, and gender of patients across different study conditions: control, adenoma, and CRC.",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Data loading</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#age-bmi-and-gender-distribution",
+    "href": "chapter1.html#age-bmi-and-gender-distribution",
+    "title": "1  Data loading",
+    "section": "",
+    "text": "CRC patients are slightly older than control cases.\nThere is an increase in BMI for adenoma compared to control cases.\nThere are more males with CRC than females.\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Age distribution\n\n\n\n\n\n\n\n\n\n\n\n(b) BMI distribution\n\n\n\n\n\n\n\n\n\n\n\n(c) Gender distribution\n\n\n\n\n\n\n\nFigure 1.1: Distribution across study conditions\n\n\n\n\n\n\n\nZeller, Georg, Julien Tap, Anita Y Voigt, Shinichi Sunagawa, Jens Roat Kultima, Paul I Costea, Aurélien Amiot, et al. 2014. “Potential of Fecal Microbiota for Early-Stage Detection of Colorectal Cancer.” Molecular Systems Biology 10 (11): 766.",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Data loading</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html",
+    "href": "chapter2.html",
+    "title": "2  Species filtering",
+    "section": "",
+    "text": "2.1 References",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Species filtering</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#references",
+    "href": "chapter2.html#references",
+    "title": "2  Species filtering",
+    "section": "",
+    "text": "Zeller, Georg, Julien Tap, Anita Y Voigt, Shinichi Sunagawa, Jens Roat Kultima, Paul I Costea, Aurélien Amiot, et al. 2014. “Potential of Fecal Microbiota for Early-Stage Detection of Colorectal Cancer.” Molecular Systems Biology 10 (11): 766.",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Species filtering</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html",
+    "href": "chapter3.html",
+    "title": "3  Feature transformation",
+    "section": "",
+    "text": "3.1 References",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Feature transformation</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#references",
+    "href": "chapter3.html#references",
+    "title": "3  Feature transformation",
+    "section": "",
+    "text": "Zeller, Georg, Julien Tap, Anita Y Voigt, Shinichi Sunagawa, Jens Roat Kultima, Paul I Costea, Aurélien Amiot, et al. 2014. “Potential of Fecal Microbiota for Early-Stage Detection of Colorectal Cancer.” Molecular Systems Biology 10 (11): 766.",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Feature transformation</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html",
+    "href": "chapter4.html",
+    "title": "4  Principal Component Analysis",
+    "section": "",
+    "text": "4.1 References",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Principal Component Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html",
+    "href": "chapter5.html",
+    "title": "5  Statistical analysis",
+    "section": "",
+    "text": "5.1 Association between host’s characteristics and CRC\nWe will now investigate for statistical differences among target classes in terms of patient demographics.",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Statistical analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#association-between-hosts-characteristics-and-crc",
+    "href": "chapter5.html#association-between-hosts-characteristics-and-crc",
+    "title": "5  Statistical analysis",
+    "section": "",
+    "text": "5.1.1 Age, BMI, and CRC\nWe start by investigating statistical significance of differences between age of control and CRC casese. For this test, we use Mann-Whitney test to investigate statistical significance of differences.\nThe below figures show that **there are statistical significant differences between control and CRC groups.\n\n\n\n\n\n\nAge\n\n\n\nWe found statistical differences in age of control and CRC group.\n\n\n\n\nShow the code\nfrom skbio.diversity import alpha\nfrom statannot import add_stat_annotation\n\n# functions to process the data and prepare in a format supporting phyloseq analysis\ndef get_sample_table(df):\n    df = df[metadata_colnames]\n    df = df.set_index('subjectID')\n    df.drop(['dataset_name','sampleID'],axis=1,inplace=True)\n    return df\n\n\ndef get_otu_taxa_table(df):\n    \"\"\"\n    This function returns otu table that contains relative abundance of species \n    where columns are species and rows are cases.\n    \n    Args:\n        df (dataframe): Dataframe of realtive abundance and metadata\n    \"\"\"\n    df = df[bacteria_colnames + ['subjectID']]\n    df.columns = [\"OTU_{}\".format(str(ind)) for ind, col in enumerate(bacteria_colnames)] + ['subjectID']\n    df.index = df['subjectID']\n    taxa_table = get_taxa_table(bacteria_colnames)\n    return df, taxa_table\n\n\ndef get_taxa_table(list_of_otus):\n    \"\"\"\n    This function parse all present microbial species at different heirarchy levels, e.g., class, order, phylum.\n    \n    \"\"\"\n    otu = 0\n    mapping = {}\n    taxa_cols = ['kingdom','phylum','class','order','family','genus','species']\n    df = pd.DataFrame(columns=taxa_cols)\n    otu_mapping = {}\n    otu_ids = []\n    for ind, otu in enumerate(list_of_otus):\n        tmp = {}\n        for col in taxa_cols:\n            tmp[col] = get_specific_label(otu, col)\n        tmp_df = pd.DataFrame([tmp])\n        df = pd.concat([df,tmp_df], ignore_index=[0])\n\n        otu_id = \"OTU_{}\".format(str(ind))\n        otu_mapping[otu] = otu_id\n        otu_ids.append(otu)\n\n    df['OTU'] = ['OTU_{}'.format(str(ind)) for ind in df.index]\n    df = df.set_index('OTU')\n    return df\n\n\ndef get_specific_label(l, t):\n    \"\"\"\n    This function parse the taxonomic assignment lable and fetch the specified information (e.g., kingdom, family)\n\n    Args:\n        l (str): string of taxonomy\n        t (str): string specifying the requested information (e.g., kingdom, family, genus, etc.)\n\n    Returns:\n        str: requested heirarichal info \n    \"\"\"\n    taxa_order = {'kingdom':0,'phylum':1,'class':2,'order':3,'family':4,'genus':5,'species':6}\n\n    try:\n        specific_label = l.split('|')[taxa_order[t]]\n\n        return specific_label.strip().split('__')[1]\n    except:\n        return 'Unknown'\n\n    \ndef get_otu_detail(taxa_table, otu_label, rank):\n    return taxa_table[otu_label][rank]\n\n\ndef aggregate_by_taxonomy(otu_table, taxa_table, taxa_rank):\n    \"\"\"\n    This function aggregates data based on specified \n    taxa rank (e.g., kingdom, class, order, phylum, genus, species).\n    \"\"\"\n    unique_values = (taxa_table[taxa_rank].unique())\n\n    # mapping for otus to unique value of chosen taxa rank\n    taxa_to_otu = {}\n\n    # prepare the mapping\n    for unique_value in unique_values:\n        tdf = taxa_table.loc[taxa_table[taxa_rank] == unique_value, :]\n        otus = tdf.index.to_list()   \n        taxa_to_otu[unique_value.strip()] = otus\n    \n    # create a dictionary for formulating expressions\n    taxa_to_exp = {}\n\n    for key in taxa_to_otu.keys():\n        taxa_to_exp[key] = '{} = 0.000001'.format(key)\n        for otu in taxa_to_otu[key]:\n            taxa_to_exp[key] += ' + ' + otu\n            otu_table[otu] = pd.to_numeric(otu_table[otu], errors='coerce')\n\n    agg_df = otu_table\n    \n    for key, expr in taxa_to_exp.items():\n        agg_df[key] = 0\n        agg_df = agg_df.eval(expr, engine='python')\n        \n    agg_df = agg_df[list(unique_values)]\n    \n    return agg_df   \n\n\ndef extend_with_alpha(df, metadata_features):\n    \"\"\"\n    This function extends the dataframe with alpha diversity measures.\n    \n    Args:\n        df: dataframe\n        \n        metadata_features: list of metadata feature names\n        \n    Returns:\n        dataframe: extended dataframe with alpha diversity features\n    \"\"\"\n    diversity_measures = pd.DataFrame()\n\n    alpha_diversity_metrics = [\n        \"chao1\",\n        \"shannon\",\n        \"simpson\",\n        \"simpson_e\",\n        \"fisher_alpha\",\n        \"berger_parker\"\n    ]\n\n    shannon_diversity = df.apply(lambda x: alpha.shannon(x), axis=1)\n    chao1_diversity   = df.apply(lambda x: alpha.chao1(x), axis=1)\n    simpson_diversity   = df.apply(lambda x: alpha.simpson(x), axis=1)\n    simpson_e_diversity   = df.apply(lambda x: alpha.simpson_e(x), axis=1)\n    fisher_diversity   = df.apply(lambda x: alpha.fisher_alpha(x), axis=1)\n    berger_parker_diversity   = df.apply(lambda x: alpha.berger_parker_d(x), axis=1)\n\n    diversity_measures['shannon'] = shannon_diversity\n    diversity_measures['chao1'] = chao1_diversity\n    diversity_measures['simpson'] = simpson_diversity\n    diversity_measures['simpson_e'] = simpson_e_diversity\n    diversity_measures['fisher_alpha'] = fisher_diversity\n    diversity_measures['berger_parker'] = berger_parker_diversity\n    \n    X_alpha = diversity_measures.reset_index().drop(['subjectID'], axis=1)\n    X_extended = pd.concat([metadata_features,X_alpha],axis=1)\n    \n    return X_extended\n\n# convert data tables into otu and taxa table\notu_table, taxa_table = get_otu_taxa_table(zeller_db)\n\n# aggregating data at higher levels\nphylum_agg = aggregate_by_taxonomy(otu_table, taxa_table, 'phylum')\ngenus_agg = aggregate_by_taxonomy(otu_table, taxa_table, 'genus')\norder_agg = aggregate_by_taxonomy(otu_table, taxa_table, 'order')\n\ncolor_palette = {'control':'green',\n                'adenoma':'orange',\n                'CRC':'#c80000'}\n\norder = ['control', 'adenoma', 'CRC']\nx = 'study_condition'\n\npairs = [\n    ('control','adenoma'),\n    ('control','CRC'),\n    ('adenoma','CRC'),\n]\n\nmetadata = zeller_db[metadata_colnames]\n\n# changing data type of age and BMI\nmetadata['age'] = pd.to_numeric(metadata.age, errors='coerce')\nmetadata['BMI'] = pd.to_numeric(metadata.BMI, errors='coerce')\n\n\n\nShow the code\n# plotting distribution\n\nfor ind, y in enumerate(['age','BMI']):\n    plt.figure()\n    ax = sns.boxplot(data=metadata, y=y,x=x, palette=color_palette, order= order)\n    #annot = Annotator(ax, pairs=pairs, data=metadata, x=x, y=y, hue=x, hue_order=order, order=order)\n    ax, test_results = add_stat_annotation(ax, box_pairs=pairs, data=metadata, x=x, y=y,\n                                           hue_order=order, order=order,\n                                           test='Mann-Whitney', text_format='star',comparisons_correction=None, \n                                           loc='inside', verbose=False)\n\n    plt.title(f'{y.upper()}')\n\n    plt.show()\n    \n\n\n\n\n\n\n\n\n\n\n\n\n(a) Age\n\n\n\n\n\n\n\n\n\n\n\n(b) BMI\n\n\n\n\n\n\n\nFigure 5.1: Age/BMI distribution\n\n\n\n\n\n5.1.2 Gender and CRC\nWe now check the distribution of gender across different target groups (i.e., control, adenoma, CRC). We employ the Chi-squared test to investigate the statistical significance of differences in gender distribution across different groups.\nFigure 5.2 shows the frequency count of males/females across control, adenoma, and CRC groups. The differences were found to be statistically significant (p-value &lt; .05).\n\n\n\n\n\n\nGender\n\n\n\nWe also found statistical differences in gender between control, adenoma and CRC group.\n\n\n\n\nShow the code\nfrom scipy.stats import chi2_contingency\n\n# Create a contingency table\ncontingency_table = pd.crosstab(metadata['gender'], metadata['study_condition'])\n\n# Apply Fisher's Exact Test\nchi2, p_value, dof, expected = chi2_contingency(contingency_table)\n\n# new figure\nplt.figure()\n\n# plot frequency plot\nsns.countplot(data=metadata, x='study_condition',hue='gender')\n\n# add p-value\nplt.text(0.5, 32, f'$X^2 test$ p-value: {p_value:.4f}', fontsize=12, color='blue')\nplt.show()\n\n\n\n\n\n\n\n\nFigure 5.2: Gender distribution",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Statistical analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#association-between-hosts-characteristics-and-species-abundance",
+    "href": "chapter5.html#association-between-hosts-characteristics-and-species-abundance",
+    "title": "5  Statistical analysis",
+    "section": "5.2 Association between host’s characteristics and species abundance",
+    "text": "5.2 Association between host’s characteristics and species abundance\nWe will now explore for association between host’s characteristics (e.g., age, BMI) and species relative abundace. Figure 5.3 below shows correlation between host’s characteristics and phylum level abundance data.\n\nFirnicutes, Spirochaetes, and Verrucomicrobia phylum levels are negatively correlated with age. That means as a person gets older these three phylum levels tend to get decreased.\nIn case of BMI, Spirochaetes, Firnicutes, Deferribacteres, Bacteroidetes, and Actinobacteria are found negatively correlated. That implies an increase in BMI (which could be taken as an indication of obesity) is associated with decrease in those phylums.\n\n\nShow the code\n# plotting distribution\n\ndef extend_abundance_metadata(df,meta):\n    \"\"\"\n    This function extends abundance data with metadata information.\n    \n    Args:\n        df (DataFrame): relative abundance data\n        meta (DataFrame): host's characteristics\n        \n    Returns:\n        DataFrame\n    \"\"\"\n    return pd.concat([df,meta],axis=1)\n\n# relative abundance aggregation at \n#family_abundance = aggregate_by_taxonomy(otu_table, taxa_table, 'family')\ngenus_abundance = aggregate_by_taxonomy(otu_table, taxa_table, 'genus')\nphylum_abundance = aggregate_by_taxonomy(otu_table, taxa_table, 'phylum')\nmetadata_ = metadata.set_index(metadata['subjectID'])\n\n# plot age correlation plot\nphylum_metadata = extend_abundance_metadata(phylum_abundance,metadata_[['age']])\nphylum_corr = phylum_metadata.corr()\nplt.figure(figsize=(7,10))\ndata_plot = phylum_corr['age'].drop('age')\nbars = plt.barh(data_plot.index, data_plot, color=np.where(data_plot &gt; 0, 'green', 'red'))\nplt.xlim([-.5,.5])\nplt.yticks(fontsize=20)\nplt.xticks(fontsize=20)\nplt.title('Age')\nplt.show()\n\n# plot bmi correlation plot\nphylum_metadata = extend_abundance_metadata(phylum_abundance,metadata_[['BMI']])\nphylum_corr = phylum_metadata.corr()\nplt.figure(figsize=(7,10))\ndata_plot = phylum_corr['BMI'].drop('BMI')\nbars = plt.barh(data_plot.index, data_plot, color=np.where(data_plot &gt; 0, 'green', 'red'))\nplt.xlim([-.5,.5])\nplt.yticks(fontsize=20)\nplt.xticks(fontsize=20)\nplt.title('BMI')\nplt.show()\n    \nphylum_metadata_ = phylum_metadata.copy()\nphylum_metadata_['study_condition'] = metadata_['study_condition'].apply(\n    lambda x: 'malign' if x == 'CRC' else 'benign')\n\ndf = phylum_metadata_.melt(id_vars='study_condition',value_vars=phylum_agg.columns)\n\nplt.figure(figsize=(7,10))\nsns.boxplot(data=df, y='variable',x='value', order=list(data_plot.index)[::-1], hue='study_condition', palette={'benign':'green','malign':'red'})\nplt.yticks(fontsize=20)\nplt.xticks(fontsize=20)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Correlation between age and phylum level abundance\n\n\n\n\n\n\n\n\n\n\n\n(b) Correlation between BMI and phylum level abundance\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) CRC and phylum level abundance\n\n\n\n\n\n\n\nFigure 5.3: Correlation with phylum abundace\n\n\n\nFigure 5.3 (c) above shows differences in microbial composition in terms of phylum level abundance among benign and malign tumors. We can notice three phylums differ among benign and malign tumor groups. Those phylums are Proteobacteria, Firnicutes, and Bacteroidetes.\n\nWe combined control with adenoma to create benign tumor class, and CRC class renamed as malign tumor.\n\nWe go further checking whether these differences are statistically significant or not. We employ Mann-Whitney test which is a non-parametric test for checking significance of differences in values from two independent groups.\nFigure 5.4 below shows distributions of abundance at phylum levels across benign and malign cases for all three selected phylumns. The differences were found to be statistically significant.\n\n\nShow the code\ncolor_palette = {'benign':'green','malign':'red'}\n\n# selected phylums for statistical analysis\nselected_phylums = ['Firmicutes','Proteobacteria','Bacteroidetes']\n\n# extracting only selected phylum data\ndf_selected = df.loc[df['variable'].isin(selected_phylums),:]\n\n# pairs for statistical test\npairs = [\n    (('Firmicutes','benign'), ('Firmicutes','malign')),\n    (('Proteobacteria','benign'), ('Proteobacteria','malign')),\n    (('Bacteroidetes','benign'), ('Bacteroidetes','malign'))\n]\n\n# creating a new figure\nplt.figure()\n\n# plotting boxplot\nax = sns.boxplot(data=df_selected, x='variable', y='value',hue='study_condition', palette=color_palette)\n\n# adding statistical annotation from Mann-Whitney test\nax, test_results = add_stat_annotation(ax, box_pairs=pairs, data=df_selected, x='variable', y='value', \n                                       hue='study_condition',hue_order=['benign','malign'], \n                                       \n                                       test='Mann-Whitney', text_format='star',comparisons_correction=None, \n                                       loc='inside', verbose=False)\n\nplt.xlabel('Phylums')\n\nplt.show()\n\n\n\n\n\n\n\n\nFigure 5.4: Phylum differences among benign and malign cases\n\n\n\n\n\nLets go further and check which genus and species under these phylums are statistically different in terms of relative abundance among benign and malign tumors.\n\n\nShow the code\ntaxa_selected = taxa_table.loc[taxa_table['phylum'].isin(selected_phylums),:]\n\n# fetching species related to selected phylums\nselected_species_cols = list(taxa_table['species'].unique())\n\n# fetching genus related to selected phylums\nselected_genus_cols = list(taxa_table['genus'].unique())\n\n# fetching family related to selected phylums\nselected_family_cols = list(taxa_table['family'].unique())\n\n# fetching order related to selected phylums\nselected_order_cols = list(taxa_table['order'].unique())\n\n# fetching order related to selected phylums\nselected_class_cols = list(taxa_table['class'].unique())\n\n\n\n\nShow the code\nfrom statannotations.Annotator import Annotator\n\ndef plot_selected_taxa(selected_taxa, plot_at,figsize=(7,15),log_scale=False,title=\"\"):\n    \"\"\"\n    Args:\n    ----\n        selected_taxa(str): taxa which are selected for further exploration\n        taxa_abun_df (dataframe): relative abundance data at taxa\n        plot_at (str): taxa at which distribution will be plotted for benign and malign tumors\n    \n    \n    \"\"\"\n    df_abundance = aggregate_by_taxonomy(otu_table, taxa_table, plot_at)\n    metadata_ = metadata.set_index(metadata['subjectID'])\n\n    taxa_abundance_selected = df_abundance[selected_taxa]\n\n    taxa_abundance_selected['study_condition'] = metadata_['study_condition'].apply(\n    lambda x: 'malign' if x == 'CRC' else 'benign')\n\n    \n    pairs = []\n    \n    for col in taxa_abundance_selected.columns:\n        if col != 'study_condition':\n            pairs.append(((col,'benign'),(col,'malign')))\n\n    plt.figure(figsize=figsize)\n    plot_df = taxa_abundance_selected.melt(id_vars='study_condition',value_vars=selected_taxa)\n    \n    ax = sns.boxplot(data=plot_df,x='variable',y='value',hue='study_condition', palette=color_palette)\n    add_stat_annotation(ax, box_pairs=pairs, data=plot_df, x='variable', y='value', \n                                       hue='study_condition',hue_order=['benign','malign'], \n                                       \n                                       test='Mann-Whitney', text_format='star',comparisons_correction=None, \n                                       loc='inside', verbose=False)  \n    ax.set_ylabel(plot_at)\n    plt.xticks(rotation='vertical')\n    if log_scale:\n        ax.set_yscale('log')\n    plt.title(title)\n    plt.show()\n\n\n\n\nShow the code\nplot_selected_taxa(selected_phylums, plot_at='phylum', figsize=(8,5),title='selected phylums')\n\n\n\n\n\n\n\n\n\n\n\nShow the code\nplot_selected_taxa(selected_family, plot_at='family', figsize=(50,5),title='families from selected phylums')\n\n\n\n\n\n\n\n\n\n\n\nShow the code\nplot_selected_taxa(selected_genus, plot_at='genus', figsize=(80,5),title='genus from selected phylums')",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Statistical analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#references",
+    "href": "chapter5.html#references",
+    "title": "5  Statistical analysis",
+    "section": "5.3 References",
+    "text": "5.3 References",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Statistical analysis</span>"
+    ]
+  },
+  {
+    "objectID": "generalizability.html",
+    "href": "generalizability.html",
+    "title": "6  Generalizability evaluation",
+    "section": "",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Colorectal Cancer Detection",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Generalizability evaluation</span>"
+    ]
+  }
+]

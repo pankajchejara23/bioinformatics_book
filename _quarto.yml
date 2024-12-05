@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: docs
+book:
+  title: "Gut microbiome analysis: from raw sequences to machine learning models"
+  author: "Pankaj Chejara"
+  date: "11/28/2024"
+  page-footer: "Copyright 2024, Pankaj Chejara"
+  chapters:
+    - index.qmd
+    - part: intro.qmd
+      chapters:
+        - chapter1.ipynb
+        - chapter2.ipynb
+        - chapter3.ipynb
+        - chapter4.ipynb
+        - chapter5.ipynb
+        - generalizability.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
