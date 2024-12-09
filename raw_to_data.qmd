@@ -1,0 +1,29 @@
+# Processing metagenomic raw sequences
+Metagenomic raw sequences consist of strings composed of four letters: A, C, T, and G, representing the nucleotide bases Adenine, Cytosine, Thymine, and Guanine, respectively. These bases form the building blocks of DNA. Machines that sequence DNA extract these bases from a DNA sample and store them in files, commonly in formats such as FASTQ or FASTA.
+
+In this tutorial, we will focus on the widely adopted FASTQ format. A FASTQ file typically contains essential information about the sample, the nucleotide sequences, and a quality score for each identified base. The quality score indicates the probability of correctly identifying a specific base, providing a valuable measure of sequencing accuracy.
+
+We will use FASTQ files to prepare data for further analysis. The figure below illustrates the processing pipeline and the tools involved in this workflow. 
+
+
+
+
+```{mermaid}
+flowchart LR
+    A(FASTQ) --> B(Quality Control)
+    B --> C(Sequence Assembly)
+    C --> D(Taxonomic Profiling)
+    C --> E(Functional Annotation)
+    D --> F(Taxonomic Profile)
+    E --> G(Functional Pathways)
+
+```
+**Quality control**: This is the step where we will determine the length of sequences for further processing. We will use tools such as **FASTQC**, **MULTIQC**, and **Trimmomatic**.
+
+**Sequence Assembly**: In this step, we will assemble multiple sequences which are from a single sample into one sequence. For that we will use **SPAdes** and **MegaHit**.
+
+**Taxonomic Profiling**:
+
+**Functional annotation**:
+
+## References {.unnumbered}

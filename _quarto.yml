@@ -2,12 +2,16 @@ project:
   type: book
   output-dir: docs
 book:
-  title: "Gut microbiome analysis: from raw sequences to machine learning models"
+  title: "Gut microbiome analysis for CRC detection: from raw sequences to machine learning models"
   author: "Pankaj Chejara"
   date: "11/28/2024"
   page-footer: "Copyright 2024, Pankaj Chejara"
   chapters:
     - index.qmd
+    - part: raw_to_data.qmd
+      chapters:
+        - raw_to_data_1.ipynb
+        - remove_human_genome.ipynb
     - part: intro.qmd
       chapters:
         - chapter1.ipynb

@@ -1,0 +1,23 @@
+[2024-12-05 10:58:42,657] multiqc                                            [DEBUG  ]  This is MultiQC v1.18
+[2024-12-05 10:58:42,657] multiqc                                            [DEBUG  ]  Command used: /usr/bin/multiqc ./fastqc_results/ ./multiqc_results/
+[2024-12-05 10:58:43,055] multiqc                                            [WARNING]  MultiQC Version v1.25.2 now available!
+[2024-12-05 10:58:43,055] multiqc                                            [DEBUG  ]  Working dir : /mnt/data/Study/colon_cancer_datasets/italian_cohort/SRP136711
+[2024-12-05 10:58:43,055] multiqc                                            [DEBUG  ]  Template    : default
+[2024-12-05 10:58:43,055] multiqc                                            [DEBUG  ]  Running Python 3.12.3 (main, Nov  6 2024, 18:32:19) [GCC 13.2.0]
+[2024-12-05 10:58:43,056] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, hifiasm, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, gopeaks, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dragen_fastqc, dedup, pbmarkdup, damageprofiler, mapdamage, biobambam2, jcvi, mtnucratio, picard, vep, bakta, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, seqera_cli, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, umitools, truvari, bbmap, bismark, biscuit, diamond, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, cellranger, snpsplit, odgi, pangolin, nextclade, freyja, humid, kat, leehom, librarian, adapterRemoval, bbduk, clipandmerge, cutadapt, flexbar, sourmash, kaiju, bracken, kraken, malt, motus, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, filtlong, prinseqplusplus, pychopper, porechop, pycoqc, minionqc, anglerfish, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap, xenome, xengsort
+[2024-12-05 10:58:43,056] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpfo4phycq
+[2024-12-05 10:58:43,060] multiqc                                            [INFO   ]  Search path : /mnt/data/Study/colon_cancer_datasets/italian_cohort/SRP136711/fastqc_results
+[2024-12-05 10:58:43,060] multiqc                                            [INFO   ]  Search path : /mnt/data/Study/colon_cancer_datasets/italian_cohort/SRP136711/multiqc_results
+[2024-12-05 10:58:43,290] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 240] // [skipped_no_match: 20]
+[2024-12-05 10:58:43,898] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.6.3
+[2024-12-05 10:58:43,899] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.6.3
+[2024-12-05 10:58:43,899] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2024-12-05 10:58:43,932] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 20 reports
+[2024-12-05 10:58:43,981] multiqc.utils.software_versions                    [DEBUG  ]  Reading software versions from config.software_versions
+[2024-12-05 10:58:43,990] multiqc                                            [DEBUG  ]  Compressing plot data
+[2024-12-05 10:58:44,098] multiqc                                            [INFO   ]  Report      : multiqc_report.html
+[2024-12-05 10:58:44,098] multiqc                                            [INFO   ]  Data        : multiqc_data
+[2024-12-05 10:58:44,098] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpfo4phycq/multiqc_data' to '/mnt/data/Study/colon_cancer_datasets/italian_cohort/SRP136711/multiqc_data'
+[2024-12-05 10:58:44,099] multiqc                                            [DEBUG  ]  Full report path: /mnt/data/Study/colon_cancer_datasets/italian_cohort/SRP136711/multiqc_report.html
+[2024-12-05 10:58:44,154] multiqc                                            [ERROR  ]  Could not include file 'assets/js/packages/jszip.min.js': [Errno 2] No such file or directory: '/tmp/tmpfo4phycq/assets/js/packages/jszip.min.js'
+[2024-12-05 10:58:44,202] multiqc                                            [INFO   ]  MultiQC complete
