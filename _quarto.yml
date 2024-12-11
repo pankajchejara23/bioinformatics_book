@@ -12,6 +12,9 @@ book:
       chapters:
         - raw_to_data_1.ipynb
         - remove_human_genome.ipynb
+        - seq_assembly.ipynb
+        - taxo_profile.ipynb
+        - fun_profile.ipynb
     - part: intro.qmd
       chapters:
         - chapter1.ipynb
@@ -19,6 +22,7 @@ book:
         - chapter3.ipynb
         - chapter4.ipynb
         - chapter5.ipynb
+        - chapter6.ipynb
         - generalizability.qmd
 
 bibliography: references.bib

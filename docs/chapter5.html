@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gut microbiome analysis: from raw sequences to machine learning models - 5&nbsp; Statistical analysis</title>
+<title>Gut microbiome analysis for CRC detection: from raw sequences to machine learning models - 10&nbsp; Statistical analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./generalizability.html" rel="next">
+<link href="./chapter6.html" rel="next">
 <link href="./chapter4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical analysis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Gut microbiome analysis: from raw sequences to machine learning models</a> 
+      <a href="./">Gut microbiome analysis for CRC detection: from raw sequences to machine learning models</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -148,8 +148,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Colorectal Cancer Detection</span></a>
+            <a href="./raw_to_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processing metagenomic raw sequences</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -157,38 +157,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./raw_to_data_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quality control</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./remove_human_genome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./seq_assembly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequence Assembly</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taxo_profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taxonomic Profiling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fun_profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functional Profiling</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Colorectal Cancer Detection</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./generalizability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
   </div>
 </li>
       </ul>
@@ -203,22 +250,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#association-between-hosts-characteristics-and-crc" id="toc-association-between-hosts-characteristics-and-crc" class="nav-link active" data-scroll-target="#association-between-hosts-characteristics-and-crc"><span class="header-section-number">5.1</span> Association between host’s characteristics and CRC</a>
+  <li><a href="#association-between-hosts-characteristics-and-crc" id="toc-association-between-hosts-characteristics-and-crc" class="nav-link active" data-scroll-target="#association-between-hosts-characteristics-and-crc"><span class="header-section-number">10.1</span> Association between host’s characteristics and CRC</a>
   <ul class="collapse">
-  <li><a href="#age-bmi-and-crc" id="toc-age-bmi-and-crc" class="nav-link" data-scroll-target="#age-bmi-and-crc"><span class="header-section-number">5.1.1</span> Age, BMI, and CRC</a></li>
-  <li><a href="#gender-and-crc" id="toc-gender-and-crc" class="nav-link" data-scroll-target="#gender-and-crc"><span class="header-section-number">5.1.2</span> Gender and CRC</a></li>
+  <li><a href="#age-bmi-and-crc" id="toc-age-bmi-and-crc" class="nav-link" data-scroll-target="#age-bmi-and-crc"><span class="header-section-number">10.1.1</span> Age, BMI, and CRC</a></li>
+  <li><a href="#gender-and-crc" id="toc-gender-and-crc" class="nav-link" data-scroll-target="#gender-and-crc"><span class="header-section-number">10.1.2</span> Gender and CRC</a></li>
   </ul></li>
-  <li><a href="#association-between-hosts-characteristics-and-species-abundance" id="toc-association-between-hosts-characteristics-and-species-abundance" class="nav-link" data-scroll-target="#association-between-hosts-characteristics-and-species-abundance"><span class="header-section-number">5.2</span> Association between host’s characteristics and species abundance</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.3</span> References</a></li>
+  <li><a href="#association-between-hosts-characteristics-and-species-abundance" id="toc-association-between-hosts-characteristics-and-species-abundance" class="nav-link" data-scroll-target="#association-between-hosts-characteristics-and-species-abundance"><span class="header-section-number">10.2</span> Association between host’s characteristics and species abundance</a></li>
+  <li><a href="#exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" id="toc-exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" class="nav-link" data-scroll-target="#exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc"><span class="header-section-number">10.3</span> Exploring Barteroidetes, Firmicutes, and Proteobacteria for theis association with CRc</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical analysis</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statistical analysis</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></h1>
 </div>
 
 
@@ -236,11 +283,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Increasing research has found the association between microbial dysbiosis and CRC. Basing on that, we will check for differences in microbial composition of control and CRC cases. We will also investigate statistical significance of differences if found any.</p>
-<section id="association-between-hosts-characteristics-and-crc" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="association-between-hosts-characteristics-and-crc"><span class="header-section-number">5.1</span> Association between host’s characteristics and CRC</h2>
+<section id="association-between-hosts-characteristics-and-crc" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="association-between-hosts-characteristics-and-crc"><span class="header-section-number">10.1</span> Association between host’s characteristics and CRC</h2>
 <p>We will now investigate for statistical differences among target classes in terms of patient demographics.</p>
-<section id="age-bmi-and-crc" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="age-bmi-and-crc"><span class="header-section-number">5.1.1</span> Age, BMI, and CRC</h3>
+<section id="age-bmi-and-crc" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="age-bmi-and-crc"><span class="header-section-number">10.1.1</span> Age, BMI, and CRC</h3>
 <p>We start by investigating statistical significance of differences between age of control and CRC casese. For this test, we use <strong>Mann-Whitney</strong> test to investigate statistical significance of differences.</p>
 <p>The below figures show that **there are statistical significant differences between <code>control</code> and <code>CRC</code> groups.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -256,7 +303,7 @@ Age
 <p>We found <strong>statistical differences in age</strong> of control and CRC group.</p>
 </div>
 </div>
-<div id="6406140d" class="cell" data-execution_count="16">
+<div id="6406140d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> skbio.diversity <span class="im">import</span> alpha</span>
@@ -492,15 +539,15 @@ Age
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-meta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Age/BMI distribution
+Figure&nbsp;10.1: Age/BMI distribution
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="gender-and-crc" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="gender-and-crc"><span class="header-section-number">5.1.2</span> Gender and CRC</h3>
+<section id="gender-and-crc" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="gender-and-crc"><span class="header-section-number">10.1.2</span> Gender and CRC</h3>
 <p>We now check the distribution of gender across different target groups (i.e., control, adenoma, CRC). We employ the Chi-squared test to investigate the statistical significance of differences in gender distribution across different groups.</p>
-<p><a href="#fig-stat-gender" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> shows the frequency count of males/females across control, adenoma, and CRC groups. The differences were found to be statistically significant (p-value &lt; .05).</p>
+<p><a href="#fig-stat-gender" class="quarto-xref">Figure&nbsp;<span>10.2</span></a> shows the frequency count of males/females across control, adenoma, and CRC groups. The differences were found to be statistically significant (p-value &lt; .05).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -542,7 +589,7 @@ Gender
 <img src="chapter5_files/figure-html/fig-stat-gender-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2: Gender distribution
+Figure&nbsp;10.2: Gender distribution
 </figcaption>
 </figure>
 </div>
@@ -550,9 +597,9 @@ Figure&nbsp;5.2: Gender distribution
 </div>
 </section>
 </section>
-<section id="association-between-hosts-characteristics-and-species-abundance" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="association-between-hosts-characteristics-and-species-abundance"><span class="header-section-number">5.2</span> Association between host’s characteristics and species abundance</h2>
-<p>We will now explore for association between host’s characteristics (e.g., age, BMI) and species relative abundace. <a href="#fig-stat-corr" class="quarto-xref">Figure&nbsp;<span>5.3</span></a> below shows correlation between host’s characteristics and phylum level abundance data.</p>
+<section id="association-between-hosts-characteristics-and-species-abundance" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="association-between-hosts-characteristics-and-species-abundance"><span class="header-section-number">10.2</span> Association between host’s characteristics and species abundance</h2>
+<p>We will now explore for association between host’s characteristics (e.g., age, BMI) and species relative abundace. <a href="#fig-stat-corr" class="quarto-xref">Figure&nbsp;<span>10.3</span></a> below shows correlation between host’s characteristics and phylum level abundance data.</p>
 <ul>
 <li><p><strong>Firnicutes, Spirochaetes, and Verrucomicrobia</strong> phylum levels are negatively correlated with age. That means as a person gets older these three phylum levels tend to get decreased.</p></li>
 <li><p>In case of BMI, <strong>Spirochaetes, Firnicutes, Deferribacteres, Bacteroidetes, and Actinobacteria</strong> are found negatively correlated. That implies an increase in BMI (which could be taken as an indication of obesity) is associated with decrease in those phylums.</p></li>
@@ -608,13 +655,7 @@ Figure&nbsp;5.2: Gender distribution
 <span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>phylum_metadata_[<span class="st">'study_condition'</span>] <span class="op">=</span> metadata_[<span class="st">'study_condition'</span>].<span class="bu">apply</span>(</span>
 <span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: <span class="st">'malign'</span> <span class="cf">if</span> x <span class="op">==</span> <span class="st">'CRC'</span> <span class="cf">else</span> <span class="st">'benign'</span>)</span>
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> phylum_metadata_.melt(id_vars<span class="op">=</span><span class="st">'study_condition'</span>,value_vars<span class="op">=</span>phylum_agg.columns)</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">10</span>))</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, y<span class="op">=</span><span class="st">'variable'</span>,x<span class="op">=</span><span class="st">'value'</span>, order<span class="op">=</span><span class="bu">list</span>(data_plot.index)[::<span class="op">-</span><span class="dv">1</span>], hue<span class="op">=</span><span class="st">'study_condition'</span>, palette<span class="op">=</span>{<span class="st">'benign'</span>:<span class="st">'green'</span>,<span class="st">'malign'</span>:<span class="st">'red'</span>})</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>plt.yticks(fontsize<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>plt.xticks(fontsize<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> phylum_metadata_.melt(id_vars<span class="op">=</span><span class="st">'study_condition'</span>,value_vars<span class="op">=</span>phylum_agg.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-stat-corr" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -645,66 +686,77 @@ Figure&nbsp;5.2: Gender distribution
 </div>
 </div>
 </div>
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stat-corr" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-stat-corr-3" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-stat-corr-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="chapter5_files/figure-html/fig-stat-corr-output-3.png" class="img-fluid figure-img" data-ref-parent="fig-stat-corr">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-stat-corr-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(c) CRC and phylum level abundance
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.3: Correlation with phylum abundace
+Figure&nbsp;10.3: Correlation with phylum abundace
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-stat-corr" class="quarto-xref">Figure&nbsp;<span>5.3</span></a> (c) above shows differences in microbial composition in terms of phylum level abundance among <code>benign</code> and <code>malign</code> tumors. We can notice three phylums differ among benign and malign tumor groups. Those phylums are <strong>Proteobacteria</strong>, <strong>Firnicutes</strong>, and <strong>Bacteroidetes</strong>.</p>
+<p><a href="#fig-crc-phylum" class="quarto-xref">Figure&nbsp;<span>10.4</span></a> (c) below shows <strong>differences in microbial composition in terms of phylum level abundance among <code>benign</code> and <code>malign</code> tumors</strong>. We can notice three phylums differ among benign and malign tumor groups. Those phylums are <strong>Proteobacteria</strong>, <strong>Firnicutes</strong>, and <strong>Bacteroidetes</strong>.</p>
 <blockquote class="blockquote">
 <p>We combined control with adenoma to create <code>benign</code> tumor class, and CRC class renamed as <code>malign</code> tumor.</p>
 </blockquote>
+<div id="cell-fig-crc-phylum" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">10</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, y<span class="op">=</span><span class="st">'variable'</span>,x<span class="op">=</span><span class="st">'value'</span>, order<span class="op">=</span><span class="bu">list</span>(data_plot.index)[::<span class="op">-</span><span class="dv">1</span>], hue<span class="op">=</span><span class="st">'study_condition'</span>, palette<span class="op">=</span>{<span class="st">'benign'</span>:<span class="st">'green'</span>,<span class="st">'malign'</span>:<span class="st">'red'</span>})</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.yticks(fontsize<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.xticks(fontsize<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-crc-phylum" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-crc-phylum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter5_files/figure-html/fig-crc-phylum-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crc-phylum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.4: CRC and phylum abundace
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc"><span class="header-section-number">10.3</span> Exploring Barteroidetes, Firmicutes, and Proteobacteria for theis association with CRc</h2>
 <p>We go further checking whether these differences are statistically significant or not. We employ <code>Mann-Whitney test</code> which is a non-parametric test for checking significance of differences in values from two independent groups.</p>
-<p><a href="#fig-differ_phylum" class="quarto-xref">Figure&nbsp;<span>5.4</span></a> below shows distributions of abundance at phylum levels across <code>benign</code> and <code>malign</code> cases for all three selected phylumns. The differences were found to be <strong>statistically significant</strong>.</p>
+<p><a href="#fig-differ_phylum" class="quarto-xref">Figure&nbsp;<span>10.5</span></a> below shows distributions of abundance at phylum levels across <code>benign</code> and <code>malign</code> cases for all three selected phylumns. The differences were found to be <strong>statistically significant</strong>.</p>
 <div id="cell-fig-differ_phylum" class="cell" data-execution_count="58">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>color_palette <span class="op">=</span> {<span class="st">'benign'</span>:<span class="st">'green'</span>,<span class="st">'malign'</span>:<span class="st">'red'</span>}</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># selected phylums for statistical analysis</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>selected_phylums <span class="op">=</span> [<span class="st">'Firmicutes'</span>,<span class="st">'Proteobacteria'</span>,<span class="st">'Bacteroidetes'</span>]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># extracting only selected phylum data</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>df_selected <span class="op">=</span> df.loc[df[<span class="st">'variable'</span>].isin(selected_phylums),:]</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># pairs for statistical test</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> [</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    ((<span class="st">'Firmicutes'</span>,<span class="st">'benign'</span>), (<span class="st">'Firmicutes'</span>,<span class="st">'malign'</span>)),</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    ((<span class="st">'Proteobacteria'</span>,<span class="st">'benign'</span>), (<span class="st">'Proteobacteria'</span>,<span class="st">'malign'</span>)),</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    ((<span class="st">'Bacteroidetes'</span>,<span class="st">'benign'</span>), (<span class="st">'Bacteroidetes'</span>,<span class="st">'malign'</span>))</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a new figure</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting boxplot</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.boxplot(data<span class="op">=</span>df_selected, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'value'</span>,hue<span class="op">=</span><span class="st">'study_condition'</span>, palette<span class="op">=</span>color_palette)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># adding statistical annotation from Mann-Whitney test</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>ax, test_results <span class="op">=</span> add_stat_annotation(ax, box_pairs<span class="op">=</span>pairs, data<span class="op">=</span>df_selected, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'value'</span>, </span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>                                       hue<span class="op">=</span><span class="st">'study_condition'</span>,hue_order<span class="op">=</span>[<span class="st">'benign'</span>,<span class="st">'malign'</span>], </span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>                                       </span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>                                       test<span class="op">=</span><span class="st">'Mann-Whitney'</span>, text_format<span class="op">=</span><span class="st">'star'</span>,comparisons_correction<span class="op">=</span><span class="va">None</span>, </span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>                                       loc<span class="op">=</span><span class="st">'inside'</span>, verbose<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Phylums'</span>)</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>color_palette <span class="op">=</span> {<span class="st">'benign'</span>:<span class="st">'green'</span>,<span class="st">'malign'</span>:<span class="st">'red'</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># selected phylums for statistical analysis</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>selected_phylums <span class="op">=</span> [<span class="st">'Firmicutes'</span>,<span class="st">'Proteobacteria'</span>,<span class="st">'Bacteroidetes'</span>]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># extracting only selected phylum data</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>df_selected <span class="op">=</span> df.loc[df[<span class="st">'variable'</span>].isin(selected_phylums),:]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># pairs for statistical test</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> [</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    ((<span class="st">'Firmicutes'</span>,<span class="st">'benign'</span>), (<span class="st">'Firmicutes'</span>,<span class="st">'malign'</span>)),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    ((<span class="st">'Proteobacteria'</span>,<span class="st">'benign'</span>), (<span class="st">'Proteobacteria'</span>,<span class="st">'malign'</span>)),</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    ((<span class="st">'Bacteroidetes'</span>,<span class="st">'benign'</span>), (<span class="st">'Bacteroidetes'</span>,<span class="st">'malign'</span>))</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a new figure</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting boxplot</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.boxplot(data<span class="op">=</span>df_selected, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'value'</span>,hue<span class="op">=</span><span class="st">'study_condition'</span>, palette<span class="op">=</span>color_palette)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># adding statistical annotation from Mann-Whitney test</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>ax, test_results <span class="op">=</span> add_stat_annotation(ax, box_pairs<span class="op">=</span>pairs, data<span class="op">=</span>df_selected, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'value'</span>, </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                                       hue<span class="op">=</span><span class="st">'study_condition'</span>,hue_order<span class="op">=</span>[<span class="st">'benign'</span>,<span class="st">'malign'</span>], </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>                                       </span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                                       test<span class="op">=</span><span class="st">'Mann-Whitney'</span>, text_format<span class="op">=</span><span class="st">'star'</span>,comparisons_correction<span class="op">=</span><span class="va">None</span>, </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                                       loc<span class="op">=</span><span class="st">'inside'</span>, verbose<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Phylums'</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-differ_phylum" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -713,7 +765,7 @@ Figure&nbsp;5.3: Correlation with phylum abundace
 <img src="chapter5_files/figure-html/fig-differ_phylum-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-differ_phylum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.4: Phylum differences among benign and malign cases
+Figure&nbsp;10.5: Phylum differences among benign and malign cases
 </figcaption>
 </figure>
 </div>
@@ -723,83 +775,70 @@ Figure&nbsp;5.4: Phylum differences among benign and malign cases
 <div id="c023b7af" class="cell" data-execution_count="91">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>taxa_selected <span class="op">=</span> taxa_table.loc[taxa_table[<span class="st">'phylum'</span>].isin(selected_phylums),:]</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching species related to selected phylums</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>selected_species_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'species'</span>].unique())</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching genus related to selected phylums</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>selected_genus_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'genus'</span>].unique())</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching family related to selected phylums</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>selected_family_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'family'</span>].unique())</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching order related to selected phylums</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>selected_order_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'order'</span>].unique())</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching order related to selected phylums</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>selected_class_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'class'</span>].unique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>taxa_selected <span class="op">=</span> taxa_table.loc[taxa_table[<span class="st">'phylum'</span>].isin(selected_phylums),:]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching species related to selected phylums</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>selected_species_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'species'</span>].unique())</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching genus related to selected phylums</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>selected_genus_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'genus'</span>].unique())</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching family related to selected phylums</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>selected_family_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'family'</span>].unique())</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching order related to selected phylums</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>selected_order_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'order'</span>].unique())</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># fetching order related to selected phylums</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>selected_class_cols <span class="op">=</span> <span class="bu">list</span>(taxa_table[<span class="st">'class'</span>].unique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div id="61d234c5" class="cell" data-execution_count="148">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statannotations.Annotator <span class="im">import</span> Annotator</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_selected_taxa(selected_taxa, plot_at,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">15</span>),log_scale<span class="op">=</span><span class="va">False</span>,title<span class="op">=</span><span class="st">""</span>):</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">        selected_taxa(str): taxa which are selected for further exploration</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">        taxa_abun_df (dataframe): relative abundance data at taxa</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">        plot_at (str): taxa at which distribution will be plotted for benign and malign tumors</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    df_abundance <span class="op">=</span> aggregate_by_taxonomy(otu_table, taxa_table, plot_at)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    metadata_ <span class="op">=</span> metadata.set_index(metadata[<span class="st">'subjectID'</span>])</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    taxa_abundance_selected <span class="op">=</span> df_abundance[selected_taxa]</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    taxa_abundance_selected[<span class="st">'study_condition'</span>] <span class="op">=</span> metadata_[<span class="st">'study_condition'</span>].<span class="bu">apply</span>(</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: <span class="st">'malign'</span> <span class="cf">if</span> x <span class="op">==</span> <span class="st">'CRC'</span> <span class="cf">else</span> <span class="st">'benign'</span>)</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    pairs <span class="op">=</span> []</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> taxa_abundance_selected.columns:</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> col <span class="op">!=</span> <span class="st">'study_condition'</span>:</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>            pairs.append(((col,<span class="st">'benign'</span>),(col,<span class="st">'malign'</span>)))</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>figsize)</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    plot_df <span class="op">=</span> taxa_abundance_selected.melt(id_vars<span class="op">=</span><span class="st">'study_condition'</span>,value_vars<span class="op">=</span>selected_taxa)</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> sns.boxplot(data<span class="op">=</span>plot_df,x<span class="op">=</span><span class="st">'variable'</span>,y<span class="op">=</span><span class="st">'value'</span>,hue<span class="op">=</span><span class="st">'study_condition'</span>, palette<span class="op">=</span>color_palette)</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    add_stat_annotation(ax, box_pairs<span class="op">=</span>pairs, data<span class="op">=</span>plot_df, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'value'</span>, </span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>                                       hue<span class="op">=</span><span class="st">'study_condition'</span>,hue_order<span class="op">=</span>[<span class="st">'benign'</span>,<span class="st">'malign'</span>], </span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>                                       </span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>                                       test<span class="op">=</span><span class="st">'Mann-Whitney'</span>, text_format<span class="op">=</span><span class="st">'star'</span>,comparisons_correction<span class="op">=</span><span class="va">None</span>, </span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>                                       loc<span class="op">=</span><span class="st">'inside'</span>, verbose<span class="op">=</span><span class="va">False</span>)  </span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(plot_at)</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    plt.xticks(rotation<span class="op">=</span><span class="st">'vertical'</span>)</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> log_scale:</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>        ax.set_yscale(<span class="st">'log'</span>)</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>    plt.title(title)</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statannotations.Annotator <span class="im">import</span> Annotator</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_selected_taxa(selected_taxa, plot_at,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">15</span>),log_scale<span class="op">=</span><span class="va">False</span>,title<span class="op">=</span><span class="st">""</span>):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ----</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">        selected_taxa(str): taxa which are selected for further exploration</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">        taxa_abun_df (dataframe): relative abundance data at taxa</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">        plot_at (str): taxa at which distribution will be plotted for benign and malign tumors</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    df_abundance <span class="op">=</span> aggregate_by_taxonomy(otu_table, taxa_table, plot_at)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    metadata_ <span class="op">=</span> metadata.set_index(metadata[<span class="st">'subjectID'</span>])</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    taxa_abundance_selected <span class="op">=</span> df_abundance[selected_taxa]</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    taxa_abundance_selected[<span class="st">'study_condition'</span>] <span class="op">=</span> metadata_[<span class="st">'study_condition'</span>].<span class="bu">apply</span>(</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: <span class="st">'malign'</span> <span class="cf">if</span> x <span class="op">==</span> <span class="st">'CRC'</span> <span class="cf">else</span> <span class="st">'benign'</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    pairs <span class="op">=</span> []</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> taxa_abundance_selected.columns:</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> col <span class="op">!=</span> <span class="st">'study_condition'</span>:</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>            pairs.append(((col,<span class="st">'benign'</span>),(col,<span class="st">'malign'</span>)))</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>figsize)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    plot_df <span class="op">=</span> taxa_abundance_selected.melt(id_vars<span class="op">=</span><span class="st">'study_condition'</span>,value_vars<span class="op">=</span>selected_taxa)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> sns.boxplot(data<span class="op">=</span>plot_df,x<span class="op">=</span><span class="st">'variable'</span>,y<span class="op">=</span><span class="st">'value'</span>,hue<span class="op">=</span><span class="st">'study_condition'</span>, palette<span class="op">=</span>color_palette)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    add_stat_annotation(ax, box_pairs<span class="op">=</span>pairs, data<span class="op">=</span>plot_df, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'value'</span>, </span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>                                       hue<span class="op">=</span><span class="st">'study_condition'</span>,hue_order<span class="op">=</span>[<span class="st">'benign'</span>,<span class="st">'malign'</span>], </span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>                                       </span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>                                       test<span class="op">=</span><span class="st">'Mann-Whitney'</span>, text_format<span class="op">=</span><span class="st">'star'</span>,comparisons_correction<span class="op">=</span><span class="va">None</span>, </span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>                                       loc<span class="op">=</span><span class="st">'inside'</span>, verbose<span class="op">=</span><span class="va">False</span>)  </span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(plot_at)</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    plt.xticks(rotation<span class="op">=</span><span class="st">'vertical'</span>)</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> log_scale:</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>        ax.set_yscale(<span class="st">'log'</span>)</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    plt.title(title)</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div>
-<div id="99c8cea1" class="cell" data-execution_count="149">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot_selected_taxa(selected_phylums, plot_at<span class="op">=</span><span class="st">'phylum'</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>),title<span class="op">=</span><span class="st">'selected phylums'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="chapter5_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
 </div>
 <div id="ef268314" class="cell" data-execution_count="151">
 <details class="code-fold">
@@ -827,9 +866,6 @@ Figure&nbsp;5.4: Phylum differences among benign and malign cases
 </div>
 </div>
 </div>
-</section>
-<section id="references" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="references"><span class="header-section-number">5.3</span> References</h2>
 
 
 </section>
@@ -1225,12 +1261,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./chapter4.html" class="pagination-link" aria-label="Principal Component Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./generalizability.html" class="pagination-link" aria-label="Generalizability evaluation">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter6.html" class="pagination-link" aria-label="Building a CRC classifier">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

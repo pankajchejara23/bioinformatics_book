@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.4.550" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gut microbiome analysis: from raw sequences to machine learning models – Colorectal Cancer Detection</title>
+<title>Gut microbiome analysis for CRC detection: from raw sequences to machine learning models - Colorectal Cancer Detection</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,7 +42,25 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter1.html" rel="next">
+<link href="./fun_profile.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,29 +88,24 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script  src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script  src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link  href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet" />
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body>
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn"
-      data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" 
-      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" 
-        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -108,9 +119,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="/">
-      Gut microbiome analysis: from raw sequences to machine learning models
-      </a> 
+      <a href="./">Gut microbiome analysis for CRC detection: from raw sequences to machine learning models</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -122,14 +131,14 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Colorectal Cancer Detection</span></a>
+            <a href="./raw_to_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processing metagenomic raw sequences</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -137,38 +146,85 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapter1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>1</span>  <span class='chapter-title'>Data loading</span></span></a>
+  <a href="./raw_to_data_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quality control</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapter2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>2</span>  <span class='chapter-title'>Species filtering</span></span></a>
+  <a href="./remove_human_genome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>3</span>  <span class='chapter-title'>Feature transformation</span></span></a>
+  <a href="./seq_assembly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequence Assembly</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>4</span>  <span class='chapter-title'>Principal Component Analysis</span></span></a>
+  <a href="./taxo_profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taxonomic Profiling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapter5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>5</span>  <span class='chapter-title'>Statistical analysis</span></span></a>
+  <a href="./fun_profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functional Profiling</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Colorectal Cancer Detection</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/generalizability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>6</span>  <span class='chapter-title'>Generalizability evaluation</span></span></a>
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./generalizability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
   </div>
 </li>
       </ul>
@@ -176,10 +232,17 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#analysis-pipeline" id="toc-analysis-pipeline" class="nav-link active" data-scroll-target="#analysis-pipeline">Analysis pipeline</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -202,21 +265,14 @@ div.csl-indent {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#analysis-pipeline" id="toc-analysis-pipeline">Analysis pipeline</a></li>
-  <li><a href="#references" id="toc-references">References</a></li>
-  </ul>
-</nav>
+
 <p>CRC is the second most deadly cancer in the world and could be treated if diagnosed on time. Notably, CRC takes up to ten years to develop from a non-cancerous poly to a cancerous one. This presents a window for early detection of CRC.</p>
 <p>Emerging research studies have shown the potential of gut microbiome for detecting CRC. We will utilize datasets from one of those studies to build a CRC classifier. In this project, we’ll walk through <strong>how to build a CRC (Colorectal Carcinoma) classifier for colorectal cancer detection using processed metagenomics data</strong> collected from various colorectal cancer cohorts <span class="citation" data-cites="thomas2019metagenomic wirbel2019meta">(<a href="#ref-thomas2019metagenomic" role="doc-biblioref">Thomas et al. 2019</a>; <a href="#ref-wirbel2019meta" role="doc-biblioref">Wirbel et al. 2019</a>)</span>.</p>
 <p>The dataset includes <strong>relative abundance data</strong> of microbial species, categorized by their operation taxonomic units (OTUs). These OTUs organize species across taxonomic ranks such as <strong>kingdom, class, order, phylum, genus, and species</strong>. The dataset draws on samples from multiple published research studies, offering a rich source of analysis.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Dataset
@@ -227,12 +283,12 @@ Dataset
 </div>
 </div>
 <section id="analysis-pipeline" class="level2">
-<h2>Analysis pipeline</h2>
+<h2 class="anchored" data-anchor-id="analysis-pipeline">Analysis pipeline</h2>
 <p>For our analysis, we will follow the steps depicted in the figure below. These steps are taken from refer to analysis pipeline of the same study.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
-<p><figure class=''></p>
+<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   A(Data Loading) --&gt; B(Species filtering)
@@ -246,7 +302,7 @@ Dataset
   E --&gt; H(Generalizability evaluation)
 </pre>
 </div>
-<p></figure></p>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -262,16 +318,9 @@ Dataset
 </ul>
 </section>
 <section id="references" class="level2 unnumbered">
-<h2 class="unnumbered">References</h2>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden" data-render-id="quarto-int-sidebar-title">Gut microbiome analysis: from raw sequences to machine learning models</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Gut microbiome analysis: from raw sequences to machine learning models</span> <span class="hidden" data-render-id="quarto-int-next"><span class="chapter-number">1</span>  <span class="chapter-title">Data loading</span></span> <span class="hidden" data-render-id="quarto-int-prev">Preface</span> <span class="hidden" data-render-id="quarto-int-sidebar:/index.htmlPreface">Preface</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-1">Colorectal Cancer Detection</span> <span class="hidden" data-render-id="quarto-int-sidebar:/chapter1.html&lt;span-class=&#39;chapter-number&#39;&gt;1&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Data-loading&lt;/span&gt;"><span class="chapter-number">1</span>  <span class="chapter-title">Data loading</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/chapter2.html&lt;span-class=&#39;chapter-number&#39;&gt;2&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Species-filtering&lt;/span&gt;"><span class="chapter-number">2</span>  <span class="chapter-title">Species filtering</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/chapter3.html&lt;span-class=&#39;chapter-number&#39;&gt;3&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Feature-transformation&lt;/span&gt;"><span class="chapter-number">3</span>  <span class="chapter-title">Feature transformation</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/chapter4.html&lt;span-class=&#39;chapter-number&#39;&gt;4&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Principal-Component-Analysis&lt;/span&gt;"><span class="chapter-number">4</span>  <span class="chapter-title">Principal Component Analysis</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/chapter5.html&lt;span-class=&#39;chapter-number&#39;&gt;5&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Statistical-analysis&lt;/span&gt;"><span class="chapter-number">5</span>  <span class="chapter-title">Statistical analysis</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/generalizability.html&lt;span-class=&#39;chapter-number&#39;&gt;6&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Generalizability-evaluation&lt;/span&gt;"><span class="chapter-number">6</span>  <span class="chapter-title">Generalizability evaluation</span></span> <span class="hidden" data-render-id="quarto-breadcrumbs-Colorectal-Cancer-Detection">Colorectal Cancer Detection</span></p>
-<div class="hidden" data-render-id="footer-center">
-<p>Copyright 2024, Pankaj Chejara</p>
-</div>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden" data-render-id="quarto-metatitle">Gut microbiome analysis: from raw sequences to machine learning models - Colorectal Cancer Detection</span> <span class="hidden" data-render-id="quarto-twittercardtitle">Gut microbiome analysis: from raw sequences to machine learning models - Colorectal Cancer Detection</span> <span class="hidden" data-render-id="quarto-ogcardtitle">Gut microbiome analysis: from raw sequences to machine learning models - Colorectal Cancer Detection</span> <span class="hidden" data-render-id="quarto-metasitename">Gut microbiome analysis: from raw sequences to machine learning models</span> <span class="hidden" data-render-id="quarto-twittercarddesc"></span> <span class="hidden" data-render-id="quarto-ogcardddesc"></span></p>
-</div>
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-thomas2019metagenomic" class="csl-entry" role="listitem">
 Thomas, Andrew Maltez, Paolo Manghi, Francesco Asnicar, Edoardo Pasolli, Federica Armanini, Moreno Zolfo, Francesco Beghini, et al. 2019. <span>“Metagenomic Analysis of Colorectal Cancer Datasets Identifies Cross-Cohort Microbial Diagnostic Signatures and a Link with Choline Degradation.”</span> <em>Nature Medicine</em> 25 (4): 667–78.
@@ -283,7 +332,7 @@ Wirbel, Jakob, Paul Theodor Pyl, Ece Kartal, Konrad Zych, Alireza Kashani, Aless
 </section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -672,13 +721,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a  href="/index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./fun_profile.html" class="pagination-link" aria-label="Functional Profiling">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functional Profiling</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a  href="/chapter1.html" class="pagination-link" aria-label="Data loading">
-        <span class="nav-page-text"><span class='chapter-number'>1</span>  <span class='chapter-title'>Data loading</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter1.html" class="pagination-link" aria-label="Data loading">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data loading</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -689,14 +738,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-      <div class='footer-contents'>Copyright 2024, Pankaj Chejara</div>  
-    </div>
+<p>Copyright 2024, Pankaj Chejara</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
 
-</body>
 
-</html>
+
+
+</body></html>

@@ -6,24 +6,24 @@ In this tutorial, we will focus on the widely adopted FASTQ format. A FASTQ file
 We will use FASTQ files to prepare data for further analysis. The figure below illustrates the processing pipeline and the tools involved in this workflow. 
 
 
-
-
 ```{mermaid}
 flowchart LR
     A(FASTQ) --> B(Quality Control)
-    B --> C(Sequence Assembly)
+    B --> I(Host DNA Removal)
+    I --> C(Sequence Assembly)
     C --> D(Taxonomic Profiling)
     C --> E(Functional Annotation)
     D --> F(Taxonomic Profile)
     E --> G(Functional Pathways)
 
 ```
-**Quality control**: This is the step where we will determine the length of sequences for further processing. We will use tools such as **FASTQC**, **MULTIQC**, and **Trimmomatic**.
+* **Quality Control**: This is the first step where we will assess the quality of raw sequences to identify low-quality reads and adapter contamination.  Tools such as **FASTQC**, **MULTIQC**, and **Fastp** will help generate quality metrics like per-based quality scores and read length distribution. Trimming tools like **Trimmomatic** or **Trim-glore** then help clean the data.
 
-**Sequence Assembly**: In this step, we will assemble multiple sequences which are from a single sample into one sequence. For that we will use **SPAdes** and **MegaHit**.
+* **Human DNA Removal**: This step removes host DNA from metagenomic raw sequences to ensure that the downstream analysis focuses fully to microbial sequences. Tools such as **bowtie2** and **samtools** will be used for this task. The reference human genome (e.g., GRCh38) will be downloaded and indexed before alignment.
 
-**Taxonomic Profiling**:
+* **Sequence Assembly**: In this step, we will assemble short reads into longer sequences. Tools like **SPAdes** (ideal for small database) and **MegaHit** (optimized for large datasets) will be employed for assembly.
 
-**Functional annotation**:
+* **Taxonomic Profiling**: This step assigns operational taxonomic units (OTUs) to assembeled and quality controled raw sequences to determine the taxonomic composition of the microbiome. To execute this task, we will explore the usage of tools such as **MetaPhlan2**, **BowTie2**, and **mOTUs**.
 
-## References {.unnumbered}
+* **Functional Annotation**: While taxonomic profile identifies "who is there", functional annotation determines "what they are doing". It assigns functional roles and metabolic pathways present in provide metagenomic sequences. Tools like **HUMAnN** will be used for the task.
+

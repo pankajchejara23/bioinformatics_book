@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Pankaj Chejara">
-<meta name="dcterms.date" content="2024-11-28">
 
-<title>Gut microbiome analysis for CRC detection: from raw sequences to machine learning models</title>
+<title>Gut microbiome analysis for CRC detection: from raw sequences to machine learning models - 1&nbsp; Quality control</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,7 +84,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./raw_to_data.html" rel="next">
+<link href="./remove_human_genome.html" rel="next">
+<link href="./raw_to_data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./raw_to_data.html">Processing metagenomic raw sequences</a></li><li class="breadcrumb-item"><a href="./raw_to_data_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quality control</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -109,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -124,14 +177,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./raw_to_data_1.html" class="sidebar-item-text sidebar-link">
+  <a href="./raw_to_data_1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quality control</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remove_human_genome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Remove decontaminated genome</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./seq_assembly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequence Assembly</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taxo_profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taxonomic Profiling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fun_profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functional Profiling</span></span></a>
   </div>
 </li>
       </ul>
@@ -148,43 +219,43 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./generalizability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
   </div>
 </li>
       </ul>
@@ -199,35 +270,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#trimming-sequences-to-enhance-quality" id="toc-trimming-sequences-to-enhance-quality" class="nav-link active" data-scroll-target="#trimming-sequences-to-enhance-quality"><span class="header-section-number">1.1</span> Trimming sequences to enhance quality</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./raw_to_data.html">Processing metagenomic raw sequences</a></li><li class="breadcrumb-item"><a href="./raw_to_data_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quality control</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Gut microbiome analysis for CRC detection: from raw sequences to machine learning models</h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quality control</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Pankaj Chejara </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 28, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -237,11 +297,68 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This book is a result of the author’s reflection of his learning of the field of bioinformatics. This book is created to bundle up all relevant learning materials and tutorials for gut microbiome analysis with a particular focus on early CRC detection.</p>
+<p>We will start by looking into quality scores of our sequences to do a quality check. To achieve this task, we use <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/"><code>FASTQC</code></a> program with raw sequencing data. FASTQC provides an easy-to-understand html report, facilitating an efficient quality check of fastq files.</p>
+<p>The command below run the <code>fastqc</code> program for each fastq (or compressed fastq.gz) file and produces a report for each file in the <code>output_directory</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> fastq_directory <span class="at">-o</span> output_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In our case, we have multiple compressed fastq files with the file extension of <code>.fastq.gz</code>. We will use the expression <code>*.fastq.gz</code> to specify all those files for the processing. The following command run fastqc program for every file.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> ./raw_data/<span class="pp">*</span>.fastq.gz <span class="at">-o</span> ./fastqc_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This execution results in the generation of a <code>html</code> and a <code>zip</code> file for each processed fastq file. The html file provides a report consisting of tables, figures about the quality check. The zip file contains all the figures, tables, and summaries. <a href="#fig-quality" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> shows the distribution of quality scores for each position for a particular fastq file (<code>SRR6915103_1</code>).</p>
+<div id="fig-quality" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="raw_to_data_1_files/figure-html/41b9f22f-08f9-49ef-9170-fe135a87d1aa-1-71752315-3e2a-49fc-9b0d-cc52a77b1275.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Qaulity score distribution
+</figcaption>
+</figure>
+</div>
+<p>Such report is generated for each <code>fastq</code> file and it can become cumbersome checking each of those files for quality check. To simplify this step and aggregate all such reports into a single one, we use <a href="https://seqera.io/multiqc/"><code>MULTIQC</code></a> program <span class="citation" data-cites="multiqc">(<a href="#ref-multiqc" role="doc-biblioref">Ewels et al. 2016</a>)</span>.</p>
+<p>The command below run multiqc program which generates a html report and a directory of images, tables, and summaries.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">multiqc</span> ./fastqc_results <span class="at">-o</span> multiqc_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The below image shows a snapshot of multiqc report.</p>
+<div id="fig-multi" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="raw_to_data_1_files/figure-html/d7320c68-6a80-4a8f-9864-4011dd44ccaa-1-084c4b9b-b0eb-4cf8-a4b0-a8df898ef865.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Multiqc report
+</figcaption>
+</figure>
+</div>
+<section id="trimming-sequences-to-enhance-quality" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="trimming-sequences-to-enhance-quality"><span class="header-section-number">1.1</span> Trimming sequences to enhance quality</h2>
+<p>This task involves removing sequences due to low quality or due to other measures (e.g., shorter than a particular length).</p>
+<p>We will use here <code>trim-galore</code> <span class="citation" data-cites="trim-galore">(<a href="#ref-trim-galore" role="doc-biblioref">Krueger 2015</a>)</span> to perform the trimming task. The program runs for each paired-eng sequence. Therefore, we will write a script to iterate over all the fastq files in the directory.</p>
+<p>The following script provides that functionality.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create output directory if it doesn't exist</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> glore_output</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop over all R1 files ending with _1.fastq.gz</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r1 <span class="kw">in</span> raw_data/<span class="pp">*</span>_1.fastq.gz<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Derive the corresponding R2 file by replacing _1 with _2</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="va">r2</span><span class="op">=</span><span class="st">"raw_data/</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">"</span><span class="va">$r1</span><span class="st">"</span> _1.fastq.gz<span class="va">)</span><span class="st">_2.fastq.gz"</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Run Trim Galore for each pair and store output in glore_output</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="ex">trim_galore</span> <span class="at">--nextera</span>  <span class="at">--quality</span> 20 <span class="at">--length</span> 75 <span class="at">--paired</span> <span class="st">"</span><span class="va">$r1</span><span class="st">"</span> <span class="st">"</span><span class="va">$r2</span><span class="st">"</span> <span class="at">--output_dir</span> glore_output</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-multiqc" class="csl-entry" role="listitem">
+Ewels, Philip, Måns Magnusson, Sverker Lundin, and Max Käller. 2016. <span>“MultiQC: Summarize Analysis Results for Multiple Tools and Samples in a Single Report.”</span> <em>Bioinformatics</em> 32 (19): 3047–48.
+</div>
+<div id="ref-trim-galore" class="csl-entry" role="listitem">
+Krueger, Felix. 2015. <span>“Trim Galore!: A Wrapper Around Cutadapt and FastQC to Consistently Apply Adapter and Quality Trimming to FastQ Files, with Extra Functionality for RRBS Data.”</span> <em>Babraham Institute</em>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -634,10 +751,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./raw_to_data.html" class="pagination-link" aria-label="Processing metagenomic raw sequences">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Processing metagenomic raw sequences</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./raw_to_data.html" class="pagination-link" aria-label="Processing metagenomic raw sequences">
-        <span class="nav-page-text">Processing metagenomic raw sequences</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./remove_human_genome.html" class="pagination-link" aria-label="Host DNA Removal">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
