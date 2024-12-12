@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gut microbiome analysis for CRC detection: from raw sequences to machine learning models - 10&nbsp; Statistical analysis</title>
+<title>7&nbsp; Statistical analysis – Gut microbiome analysis for CRC detection: from raw sequences to machine learning models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter6.html" rel="next">
+<link href="./generalizability.html" rel="next">
 <link href="./chapter4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,13 +112,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical analysis</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./raw_to_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing metagenomic raw sequences</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -164,25 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remove_human_genome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./seq_assembly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequence Assembly</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./taxo_profile.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taxonomic Profiling</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./fun_profile.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functional Profiling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Remove decontaminated genome</span></span></a>
   </div>
 </li>
       </ul>
@@ -191,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Colorectal Cancer Detection</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -199,43 +181,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./generalizability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
   </div>
 </li>
       </ul>
@@ -250,22 +226,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#association-between-hosts-characteristics-and-crc" id="toc-association-between-hosts-characteristics-and-crc" class="nav-link active" data-scroll-target="#association-between-hosts-characteristics-and-crc"><span class="header-section-number">10.1</span> Association between host’s characteristics and CRC</a>
+  <li><a href="#association-between-hosts-characteristics-and-crc" id="toc-association-between-hosts-characteristics-and-crc" class="nav-link active" data-scroll-target="#association-between-hosts-characteristics-and-crc"><span class="header-section-number">7.1</span> Association between host’s characteristics and CRC</a>
   <ul class="collapse">
-  <li><a href="#age-bmi-and-crc" id="toc-age-bmi-and-crc" class="nav-link" data-scroll-target="#age-bmi-and-crc"><span class="header-section-number">10.1.1</span> Age, BMI, and CRC</a></li>
-  <li><a href="#gender-and-crc" id="toc-gender-and-crc" class="nav-link" data-scroll-target="#gender-and-crc"><span class="header-section-number">10.1.2</span> Gender and CRC</a></li>
+  <li><a href="#age-bmi-and-crc" id="toc-age-bmi-and-crc" class="nav-link" data-scroll-target="#age-bmi-and-crc"><span class="header-section-number">7.1.1</span> Age, BMI, and CRC</a></li>
+  <li><a href="#gender-and-crc" id="toc-gender-and-crc" class="nav-link" data-scroll-target="#gender-and-crc"><span class="header-section-number">7.1.2</span> Gender and CRC</a></li>
   </ul></li>
-  <li><a href="#association-between-hosts-characteristics-and-species-abundance" id="toc-association-between-hosts-characteristics-and-species-abundance" class="nav-link" data-scroll-target="#association-between-hosts-characteristics-and-species-abundance"><span class="header-section-number">10.2</span> Association between host’s characteristics and species abundance</a></li>
-  <li><a href="#exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" id="toc-exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" class="nav-link" data-scroll-target="#exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc"><span class="header-section-number">10.3</span> Exploring Barteroidetes, Firmicutes, and Proteobacteria for theis association with CRc</a></li>
+  <li><a href="#association-between-hosts-characteristics-and-species-abundance" id="toc-association-between-hosts-characteristics-and-species-abundance" class="nav-link" data-scroll-target="#association-between-hosts-characteristics-and-species-abundance"><span class="header-section-number">7.2</span> Association between host’s characteristics and species abundance</a></li>
+  <li><a href="#exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" id="toc-exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" class="nav-link" data-scroll-target="#exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc"><span class="header-section-number">7.3</span> Exploring Barteroidetes, Firmicutes, and Proteobacteria for theis association with CRc</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Colorectal Cancer Detection</a></li><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical analysis</span></h1>
 </div>
 
 
@@ -283,11 +259,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Increasing research has found the association between microbial dysbiosis and CRC. Basing on that, we will check for differences in microbial composition of control and CRC cases. We will also investigate statistical significance of differences if found any.</p>
-<section id="association-between-hosts-characteristics-and-crc" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="association-between-hosts-characteristics-and-crc"><span class="header-section-number">10.1</span> Association between host’s characteristics and CRC</h2>
+<section id="association-between-hosts-characteristics-and-crc" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="association-between-hosts-characteristics-and-crc"><span class="header-section-number">7.1</span> Association between host’s characteristics and CRC</h2>
 <p>We will now investigate for statistical differences among target classes in terms of patient demographics.</p>
-<section id="age-bmi-and-crc" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="age-bmi-and-crc"><span class="header-section-number">10.1.1</span> Age, BMI, and CRC</h3>
+<section id="age-bmi-and-crc" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="age-bmi-and-crc"><span class="header-section-number">7.1.1</span> Age, BMI, and CRC</h3>
 <p>We start by investigating statistical significance of differences between age of control and CRC casese. For this test, we use <strong>Mann-Whitney</strong> test to investigate statistical significance of differences.</p>
 <p>The below figures show that **there are statistical significant differences between <code>control</code> and <code>CRC</code> groups.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -513,7 +489,7 @@ Age
 <div aria-describedby="fig-stat-meta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stat-meta" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-stat-meta-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-stat-meta-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-stat-meta-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chapter5_files/figure-html/fig-stat-meta-output-1.png" class="img-fluid figure-img" data-ref-parent="fig-stat-meta">
@@ -525,7 +501,7 @@ Age
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stat-meta" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-stat-meta-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-stat-meta-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-stat-meta-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chapter5_files/figure-html/fig-stat-meta-output-2.png" class="img-fluid figure-img" data-ref-parent="fig-stat-meta">
@@ -539,15 +515,15 @@ Age
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-meta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.1: Age/BMI distribution
+Figure&nbsp;7.1: Age/BMI distribution
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="gender-and-crc" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="gender-and-crc"><span class="header-section-number">10.1.2</span> Gender and CRC</h3>
+<section id="gender-and-crc" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="gender-and-crc"><span class="header-section-number">7.1.2</span> Gender and CRC</h3>
 <p>We now check the distribution of gender across different target groups (i.e., control, adenoma, CRC). We employ the Chi-squared test to investigate the statistical significance of differences in gender distribution across different groups.</p>
-<p><a href="#fig-stat-gender" class="quarto-xref">Figure&nbsp;<span>10.2</span></a> shows the frequency count of males/females across control, adenoma, and CRC groups. The differences were found to be statistically significant (p-value &lt; .05).</p>
+<p><a href="#fig-stat-gender" class="quarto-xref">Figure&nbsp;<span>7.2</span></a> shows the frequency count of males/females across control, adenoma, and CRC groups. The differences were found to be statistically significant (p-value &lt; .05).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -583,13 +559,13 @@ Gender
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-stat-gender" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-stat-gender" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stat-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chapter5_files/figure-html/fig-stat-gender-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-gender-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.2: Gender distribution
+Figure&nbsp;7.2: Gender distribution
 </figcaption>
 </figure>
 </div>
@@ -597,9 +573,9 @@ Figure&nbsp;10.2: Gender distribution
 </div>
 </section>
 </section>
-<section id="association-between-hosts-characteristics-and-species-abundance" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="association-between-hosts-characteristics-and-species-abundance"><span class="header-section-number">10.2</span> Association between host’s characteristics and species abundance</h2>
-<p>We will now explore for association between host’s characteristics (e.g., age, BMI) and species relative abundace. <a href="#fig-stat-corr" class="quarto-xref">Figure&nbsp;<span>10.3</span></a> below shows correlation between host’s characteristics and phylum level abundance data.</p>
+<section id="association-between-hosts-characteristics-and-species-abundance" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="association-between-hosts-characteristics-and-species-abundance"><span class="header-section-number">7.2</span> Association between host’s characteristics and species abundance</h2>
+<p>We will now explore for association between host’s characteristics (e.g., age, BMI) and species relative abundace. <a href="#fig-stat-corr" class="quarto-xref">Figure&nbsp;<span>7.3</span></a> below shows correlation between host’s characteristics and phylum level abundance data.</p>
 <ul>
 <li><p><strong>Firnicutes, Spirochaetes, and Verrucomicrobia</strong> phylum levels are negatively correlated with age. That means as a person gets older these three phylum levels tend to get decreased.</p></li>
 <li><p>In case of BMI, <strong>Spirochaetes, Firnicutes, Deferribacteres, Bacteroidetes, and Actinobacteria</strong> are found negatively correlated. That implies an increase in BMI (which could be taken as an indication of obesity) is associated with decrease in those phylums.</p></li>
@@ -662,7 +638,7 @@ Figure&nbsp;10.2: Gender distribution
 <div aria-describedby="fig-stat-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stat-corr" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-stat-corr-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-stat-corr-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-stat-corr-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chapter5_files/figure-html/fig-stat-corr-output-1.png" class="img-fluid figure-img" data-ref-parent="fig-stat-corr">
@@ -674,7 +650,7 @@ Figure&nbsp;10.2: Gender distribution
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stat-corr" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-stat-corr-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-stat-corr-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-stat-corr-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chapter5_files/figure-html/fig-stat-corr-output-2.png" class="img-fluid figure-img" data-ref-parent="fig-stat-corr">
@@ -688,11 +664,11 @@ Figure&nbsp;10.2: Gender distribution
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.3: Correlation with phylum abundace
+Figure&nbsp;7.3: Correlation with phylum abundace
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-crc-phylum" class="quarto-xref">Figure&nbsp;<span>10.4</span></a> (c) below shows <strong>differences in microbial composition in terms of phylum level abundance among <code>benign</code> and <code>malign</code> tumors</strong>. We can notice three phylums differ among benign and malign tumor groups. Those phylums are <strong>Proteobacteria</strong>, <strong>Firnicutes</strong>, and <strong>Bacteroidetes</strong>.</p>
+<p><a href="#fig-crc-phylum" class="quarto-xref">Figure&nbsp;<span>7.4</span></a> (c) below shows <strong>differences in microbial composition in terms of phylum level abundance among <code>benign</code> and <code>malign</code> tumors</strong>. We can notice three phylums differ among benign and malign tumor groups. Those phylums are <strong>Proteobacteria</strong>, <strong>Firnicutes</strong>, and <strong>Bacteroidetes</strong>.</p>
 <blockquote class="blockquote">
 <p>We combined control with adenoma to create <code>benign</code> tumor class, and CRC class renamed as <code>malign</code> tumor.</p>
 </blockquote>
@@ -706,23 +682,23 @@ Figure&nbsp;10.3: Correlation with phylum abundace
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-crc-phylum" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-crc-phylum" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crc-phylum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chapter5_files/figure-html/fig-crc-phylum-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crc-phylum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.4: CRC and phylum abundace
+Figure&nbsp;7.4: CRC and phylum abundace
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc"><span class="header-section-number">10.3</span> Exploring Barteroidetes, Firmicutes, and Proteobacteria for theis association with CRc</h2>
+<section id="exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="exploring-barteroidetes-firmicutes-and-proteobacteria-for-theis-association-with-crc"><span class="header-section-number">7.3</span> Exploring Barteroidetes, Firmicutes, and Proteobacteria for theis association with CRc</h2>
 <p>We go further checking whether these differences are statistically significant or not. We employ <code>Mann-Whitney test</code> which is a non-parametric test for checking significance of differences in values from two independent groups.</p>
-<p><a href="#fig-differ_phylum" class="quarto-xref">Figure&nbsp;<span>10.5</span></a> below shows distributions of abundance at phylum levels across <code>benign</code> and <code>malign</code> cases for all three selected phylumns. The differences were found to be <strong>statistically significant</strong>.</p>
+<p><a href="#fig-differ_phylum" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> below shows distributions of abundance at phylum levels across <code>benign</code> and <code>malign</code> cases for all three selected phylumns. The differences were found to be <strong>statistically significant</strong>.</p>
 <div id="cell-fig-differ_phylum" class="cell" data-execution_count="58">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -759,13 +735,13 @@ Figure&nbsp;10.4: CRC and phylum abundace
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-differ_phylum" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-differ_phylum" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-differ_phylum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="chapter5_files/figure-html/fig-differ_phylum-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-differ_phylum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.5: Phylum differences among benign and malign cases
+Figure&nbsp;7.5: Phylum differences among benign and malign cases
 </figcaption>
 </figure>
 </div>
@@ -906,18 +882,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -949,7 +914,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -984,7 +989,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1261,12 +1270,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./chapter4.html" class="pagination-link" aria-label="Principal Component Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter6.html" class="pagination-link" aria-label="Building a CRC classifier">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./generalizability.html" class="pagination-link" aria-label="Generalizability evaluation">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
