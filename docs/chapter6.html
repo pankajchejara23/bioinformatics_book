@@ -170,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remove_human_genome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Remove decontaminated genome</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -293,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Now, we will build our CRC classifier using gut microbial data from four different cohorts: <code>French</code>, <code>Italian</code>, <code>Austrian</code>, and <code>Germany</code>. Our dataset consists of relative abundance of gut microbial communities. The dataset also cotains classification of those communities at different taxonomic levels (e.g., phylum, genus, species).</p>
-<p>We will follow the approach depicted in <a href="#fig-method" class="quarto-xref">Figure&nbsp;<span>11.1</span></a> for building our CRC classifier. We will divide all cohorts using <strong>70/30 split</strong> into training and test set. All training sets will be utilized for building models and selecting the one with best performance. The selected model then applied on test set from different cohorts to assess generalizability of the model across cohorts.</p>
+<p>We will follow the approach depicted in <a href="#fig-method" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-method</span></a> for building our CRC classifier. We will divide all cohorts using <strong>70/30 split</strong> into training and test set. All training sets will be utilized for building models and selecting the one with best performance. The selected model then applied on test set from different cohorts to assess generalizability of the model across cohorts.</p>
 <div id="fig-method" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -306,7 +306,7 @@ Figure&nbsp;11.1: Methodology to build and assess CRC classifier
 </div>
 <section id="target-class-distribution-across-cohorts" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="target-class-distribution-across-cohorts"><span class="header-section-number">11.1</span> Target class distribution across cohorts</h2>
-<p><a href="#fig-dist-class" class="quarto-xref">Figure&nbsp;<span>11.2</span></a> below shows the ditribution of target class. For our modeling task, we have grouped <code>adenoma</code> and <code>control</code> into a single class of <code>benign</code> tumor. While, <code>CRC</code> class is treated as <code>malign</code> tumor.</p>
+<p><a href="#fig-dist-class" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-dist-class</span></a> below shows the ditribution of target class. For our modeling task, we have grouped <code>adenoma</code> and <code>control</code> into a single class of <code>benign</code> tumor. While, <code>CRC</code> class is treated as <code>malign</code> tumor.</p>
 <ul>
 <li><strong>French and Austrian cohorts are highly skewed</strong> in terms of target class distribution, both having ~ 30% cases of CRC.</li>
 <li>While, <strong>German and Italian cohorts have relatively balanced</strong> cases of malign and benign tumors.</li>
@@ -2195,7 +2195,7 @@ Figure&nbsp;11.3: Lasso model performance
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#perform_logo(dt, train_X,train_y, groups,'Decision tree across cohorts (training)')</span></span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#perform_logo(rf, train_X,train_y, groups,'Random forest across cohorts (training)')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="cell-fig-model-train_cohorts" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="256">
+<div id="cell-fig-model-train_cohorts" class="cell quarto-layout-panel" data-execution_count="256" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-model-train_cohorts" class="quarto-float quarto-figure quarto-figure-center anchored">

@@ -133,7 +133,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remove_human_genome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Remove decontaminated genome</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./seq_assembly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sequence Assembly</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taxo_profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taxonomic Profiling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fun_profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functional Profiling</span></span></a>
   </div>
 </li>
       </ul>
@@ -150,37 +168,43 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./generalizability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
   </div>
 </li>
       </ul>
@@ -190,14 +214,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -231,7 +249,8 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
     A(FASTQ) --&gt; B(Quality Control)
-    B --&gt; C(Sequence Assembly)
+    B --&gt; I(Host DNA Removal)
+    I --&gt; C(Sequence Assembly)
     C --&gt; D(Taxonomic Profiling)
     C --&gt; E(Functional Annotation)
     D --&gt; F(Taxonomic Profile)
@@ -243,15 +262,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p><strong>Quality control</strong>: This is the step where we will determine the length of sequences for further processing. We will use tools such as <strong>FASTQC</strong>, <strong>MULTIQC</strong>, and <strong>Trimmomatic</strong>.</p>
-<p><strong>Sequence Assembly</strong>: In this step, we will assemble multiple sequences which are from a single sample into one sequence. For that we will use <strong>SPAdes</strong> and <strong>MegaHit</strong>.</p>
-<p><strong>Taxonomic Profiling</strong>:</p>
-<p><strong>Functional annotation</strong>:</p>
-<section id="references" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><p><strong>Quality Control</strong>: This is the first step where we will assess the quality of raw sequences to identify low-quality reads and adapter contamination. Tools such as <strong>FASTQC</strong>, <strong>MULTIQC</strong>, and <strong>Fastp</strong> will help generate quality metrics like per-based quality scores and read length distribution. Trimming tools like <strong>Trimmomatic</strong> or <strong>Trim-glore</strong> then help clean the data.</p></li>
+<li><p><strong>Human DNA Removal</strong>: This step removes host DNA from metagenomic raw sequences to ensure that the downstream analysis focuses fully to microbial sequences. Tools such as <strong>bowtie2</strong> and <strong>samtools</strong> will be used for this task. The reference human genome (e.g., GRCh38) will be downloaded and indexed before alignment.</p></li>
+<li><p><strong>Sequence Assembly</strong>: In this step, we will assemble short reads into longer sequences. Tools like <strong>SPAdes</strong> (ideal for small database) and <strong>MegaHit</strong> (optimized for large datasets) will be employed for assembly.</p></li>
+<li><p><strong>Taxonomic Profiling</strong>: This step assigns operational taxonomic units (OTUs) to assembeled and quality controled raw sequences to determine the taxonomic composition of the microbiome. To execute this task, we will explore the usage of tools such as <strong>MetaPhlan2</strong>, <strong>BowTie2</strong>, and <strong>mOTUs</strong>.</p></li>
+<li><p><strong>Functional Annotation</strong>: While taxonomic profile identifies “who is there”, functional annotation determines “what they are doing”. It assigns functional roles and metabolic pathways present in provide metagenomic sequences. Tools like <strong>HUMAnN</strong> will be used for the task.</p></li>
+</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
