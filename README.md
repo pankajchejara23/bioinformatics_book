@@ -1,6 +1,6 @@
-# Gut Microbiome Analysis for CRC Detection: Source Code
+# Gut Microbiome Analysis for CRC Detection
 
-This repository contains the source code for the book "Gut Microbiome Analysis for CRC Detection: From Raw Sequences to Machine Learning Models," created using [Quarto](https://quarto.org/). The book is available online at [https://pankajchejara23.github.io/bioinformatics_book/](https://pankajchejara23.github.io/bioinformatics_book/).
+This repository contains the source code for the book **"Gut Microbiome Analysis for CRC Detection: From Raw Sequences to Machine Learning Models,"** created using [Quarto](https://quarto.org/). The book is available online at [https://pankajchejara23.github.io/bioinformatics_book/](https://pankajchejara23.github.io/bioinformatics_book/).
 
 ## Project Structure
 
