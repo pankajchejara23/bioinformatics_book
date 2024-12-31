@@ -8,27 +8,34 @@ book:
   page-footer: "Copyright 2024, Pankaj Chejara"
   chapters:
     - index.qmd
-    - part: raw_to_data.qmd
+    - part: ./chapters/16S/16S_processing_intro.qmd
       chapters:
-        - raw_to_data_1.ipynb
-        - remove_human_genome.ipynb
-        - seq_assembly.ipynb
-        - taxo_profile.ipynb
-        - fun_profile.ipynb
-    - part: intro.qmd
+        - ./chapters/16S/16S_chapter0.ipynb
+        - ./chapters/16S/16S_chapter1.ipynb
+        - ./chapters/16S/16S_chapter2.ipynb
+        - ./chapters/16S/16S_chapter3.ipynb
+        - ./chapters/16S/16S_chapter4.ipynb
+        - ./chapters/16S/16S_chapter5.ipynb
+    - part: ./chapters/Metagenomics/Meta_processing_intro.qmd
       chapters:
-        - chapter1.ipynb
-        - chapter2.ipynb
-        - chapter3.ipynb
-        - chapter4.ipynb
-        - chapter5.ipynb
-        - chapter6.ipynb
-        - generalizability.qmd
+        - ./chapters/Metagenomics/Meta_chapter1.ipynb
+        - ./chapters/Metagenomics/Meta_chapter2.ipynb
+        - ./chapters/Metagenomics/Meta_chapter3.ipynb
+        - ./chapters/Metagenomics/Meta_chapter4.ipynb
+        - ./chapters/Metagenomics/Meta_chapter5.ipynb
+    - part: ./Analysis/Analysis_intro.qmd
+      chapters:
+        - ./chapters/Analysis/chapter1.ipynb
+        - ./chapters/Analysis/chapter2.ipynb
+        - ./chapters/Analysis/chapter3.ipynb
+        - ./chapters/Analysis/chapter4.ipynb
+        - ./chapters/Analysis/chapter5.ipynb
+        - ./chapters/Analysis/chapter6.ipynb
+        - ./chapters/Analysis/generalizability.qmd
 
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
+
