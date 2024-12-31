@@ -5,6 +5,7 @@ book:
   title: "Gut microbiome analysis for CRC detection: from raw sequences to machine learning models"
   author: "Pankaj Chejara"
   date: "11/28/2024"
+
   page-footer: "Copyright 2024, Pankaj Chejara"
   chapters:
     - index.qmd
@@ -23,7 +24,7 @@ book:
         - ./chapters/Metagenomics/Meta_chapter3.ipynb
         - ./chapters/Metagenomics/Meta_chapter4.ipynb
         - ./chapters/Metagenomics/Meta_chapter5.ipynb
-    - part: ./Analysis/Analysis_intro.qmd
+    - part: ./chapters/Analysis/Analysis_intro.qmd
       chapters:
         - ./chapters/Analysis/chapter1.ipynb
         - ./chapters/Analysis/chapter2.ipynb
@@ -37,5 +38,10 @@ bibliography: references.bib
 
 format:
   html:
+    toc: true
     theme: cosmo
 
+
+metadata:
+ 
+  license: "Copyright @ Pankaj Chejara"
