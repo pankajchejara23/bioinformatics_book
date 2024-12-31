@@ -1,3 +1,15 @@
-# Preface {.unnumbered}
+---
+format:
+  html:
+    code-block-background: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+
+# Introduction {.unnumbered}
+
 
 This book is a result of the author's reflection of his learning of the field of bioinformatics. This book is created to bundle up all relevant learning materials and tutorials for gut microbiome analysis with a particular focus on early CRC detection.
+
+![](./cover.jpeg)
