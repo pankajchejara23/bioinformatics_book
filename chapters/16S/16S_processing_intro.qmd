@@ -1,20 +1,37 @@
 # 16S rRNA Sequence Processing
-In this part of the book, we will dive into processing steps for 16S rRNA raw reads to obtain features such as Operational Taxonomic Units (OTUs) and Amplicon Sequence Variants (ASV). This steps will provide a detailed explanation and demonstrate the usage of relevant tools.
+In this part of the book, we will dive into processing steps for 16S rRNA raw reads to obtain taxonomic information about microbiome represented in the data.  There are two different ways to achieve that: Operational taxonomic units and Amplicon sequence variants. 
+
+You can check [this resource](https://astrobiomike.github.io/misc/amplicon_and_metagen) to understand the differences between the two.
+
+The diagram below shows all steps involved in processing 16S rRNA sequence data. 
 
 
-## Steps
-We will basically follow the process depicted in the below diagram.
 
 ```{mermaid}
-flowchart LR
-    X(Reference DB) -->D(Taxonomic Profiling)
-    A(FASTQ) --> B(Quality Control)
-    B --> C(Denoising)
-    C --> D
-    D --> F(Taxonomic Profile)
 
+graph TD
+    L(Reference DB) --> M(V4 extraction)
+    M --> N(Building classifier)
+    N --> O(Taxonomy classifier)
+    A(FastQ files) --> B(Quality control)
+    B --> I(Primer removal)
+    I --> C(Denoise)
+    C --> B2(ASVs)
+    I --> C1(Merge paired reads)
+    C1 --> E(Quality control)
+    E --> F(Clustering sequences)
+    F --> G(Chimera removal)
+    G --> H(OTUs)
+    H --> J(Taxonomic assignment)
+    B2 --> J
+    O --> J
+    J --> K(Diversity metrics)
+    
 
 ```
+
+
+
 # References
 1. https://astrobiomike.github.io/misc/amplicon_and_metagen
 
