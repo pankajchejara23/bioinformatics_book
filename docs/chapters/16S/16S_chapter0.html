@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Preparing reference database – Gut microbiome analysis for CRC detection: from raw sequences to machine learning models</title>
+<title>Reference database – Gut microbiome analysis for CRC detection: from raw sequences to machine learning models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,7 +135,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/16S/16S_processing_intro.html">16S rRNA Sequence Processing</a></li><li class="breadcrumb-item"><a href="../../chapters/16S/16S_chapter0.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparing reference database</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/16S/16S_processing_intro.html">16S rRNA Sequence Processing</a></li><li class="breadcrumb-item"><a href="../../chapters/16S/16S_chapter0.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Reference database</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,7 +163,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -178,7 +178,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/16S/16S_chapter0.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparing reference database</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Reference database</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -202,13 +202,19 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/16S/16S_chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Denoising</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ASVs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/16S/16S_chapter5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OTUs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/16S/16S_chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Streamlining the analysis process</span></span></a>
   </div>
 </li>
       </ul>
@@ -225,31 +231,31 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Metagenomics/Meta_chapter1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Quality control</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quality control</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Metagenomics/Meta_chapter2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Host DNA Removal</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Metagenomics/Meta_chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sequence Assembly</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sequence Assembly</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Metagenomics/Meta_chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Taxonomic Profiling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Taxonomic Profiling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Metagenomics/Meta_chapter5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Functional Profiling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functional Profiling</span></span></a>
   </div>
 </li>
       </ul>
@@ -266,43 +272,43 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Analysis/chapter1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data loading</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Analysis/chapter2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Species filtering</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Analysis/chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Feature transformation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Analysis/chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Analysis/chapter5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Statistical analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Analysis/chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Building a CRC classifier</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/Analysis/generalizability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Generalizability evaluation</span></span></a>
   </div>
 </li>
       </ul>
@@ -323,7 +329,11 @@ div.csl-indent {
   <li><a href="#step-1-download-silva" id="toc-step-1-download-silva" class="nav-link" data-scroll-target="#step-1-download-silva">Step-1: Download SILVA</a></li>
   <li><a href="#step-2-converting-rna-sequences-to-dna-sequences" id="toc-step-2-converting-rna-sequences-to-dna-sequences" class="nav-link" data-scroll-target="#step-2-converting-rna-sequences-to-dna-sequences">Step-2: Converting rna sequences to dna sequences</a></li>
   </ul></li>
-  <li><a href="#building-a-taxonomy-classifer" id="toc-building-a-taxonomy-classifer" class="nav-link" data-scroll-target="#building-a-taxonomy-classifer">Building a taxonomy classifer</a></li>
+  <li><a href="#building-a-taxonomy-classifer" id="toc-building-a-taxonomy-classifer" class="nav-link" data-scroll-target="#building-a-taxonomy-classifer">Building a taxonomy classifer</a>
+  <ul class="collapse">
+  <li><a href="#extract-v4-region" id="toc-extract-v4-region" class="nav-link" data-scroll-target="#extract-v4-region">Extract V4 region</a></li>
+  <li><a href="#train-the-classifier" id="toc-train-the-classifier" class="nav-link" data-scroll-target="#train-the-classifier">Train the classifier</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -331,9 +341,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/16S/16S_processing_intro.html">16S rRNA Sequence Processing</a></li><li class="breadcrumb-item"><a href="../../chapters/16S/16S_chapter0.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparing reference database</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/16S/16S_processing_intro.html">16S rRNA Sequence Processing</a></li><li class="breadcrumb-item"><a href="../../chapters/16S/16S_chapter0.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Reference database</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Preparing reference database</h1>
+<h1 class="title">Reference database</h1>
 </div>
 
 
@@ -350,7 +360,8 @@ div.csl-indent {
 </header>
 
 
-<p>We will first setup our reference database in QIIME2. For that we are going to use <strong>SILVA database</strong> <span class="citation" data-cites="silva1 silva2">(<a href="#ref-silva1" role="doc-biblioref">Pruesse et al. 2007</a>; <a href="#ref-silva2" role="doc-biblioref">Quast et al. 2012</a>)</span> To simplify this process, we will use an excelent plugin that is <strong>Rescript</strong> <span class="citation" data-cites="rescript">(<a href="#ref-rescript" role="doc-biblioref">Robeson et al. 2021</a>)</span>. This plugin provides an already built pipeline to download and process different reference databases (read more <a href="https://forum.qiime2.org/t/processing-filtering-and-evaluating-the-silva-database-and-other-reference-sequence-data-with-rescript/15494">here</a>).</p>
+<p>We will first setup our reference database in QIIME2 (version 2024.10). For that we are going to use <strong>SILVA database</strong> <span class="citation" data-cites="silva1 silva2">(<a href="#ref-silva1" role="doc-biblioref">Pruesse et al. 2007</a>; <a href="#ref-silva2" role="doc-biblioref">Quast et al. 2012</a>)</span>. There are other databases as well, such as, Greengenes, RDP.</p>
+<p>To simplify the process of setting up reference database, we will use an excellent plugin that is <strong>Rescript</strong> <span class="citation" data-cites="rescript">(<a href="#ref-rescript" role="doc-biblioref">Robeson et al. 2021</a>)</span>. This plugin provides an already built pipeline to download and process different reference databases (read more <a href="https://forum.qiime2.org/t/processing-filtering-and-evaluating-the-silva-database-and-other-reference-sequence-data-with-rescript/15494">here</a>).</p>
 <section id="installing-rescript-plugin" class="level2">
 <h2 class="anchored" data-anchor-id="installing-rescript-plugin">Installing RESCRIPt plugin</h2>
 <p>We will use the following command to install the plugin</p>
@@ -394,8 +405,8 @@ RESCRIPt error
 <h3 class="anchored" data-anchor-id="step-2-converting-rna-sequences-to-dna-sequences">Step-2: Converting rna sequences to dna sequences</h3>
 <p>The resultant sequences from the above step are of ‘RNASequences’ data type. To ensure a smooth downstream analysis, we will convert data type to ‘DNASequences’ using the following command.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">qiime</span> rescript reverse-transcribe <span class="dt">\</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--i-rna-sequences</span> silva-138.1-ssu-nr99-rna-seqs.qza </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--o-dna-sequences</span> silva-138.1-ssu-nr99-seqs.qza</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--i-rna-sequences</span> silva-138.1-ssu-nr99-rna-seqs.qza <span class="dt">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--o-dna-sequences</span> silva-138.1-ssu-nr99-seqs.qza</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The resultant qiime artifact <code>silva-138.1-ssu-nr99-seqs.qza</code> now can be used to train a classifier. Additional steps could also be integrated in the process before building the classifier. Such as <strong>cutting low quality sequences</strong>, <strong>filtering based on length</strong>, etc.</p>
 <p>The <a href="https://forum.qiime2.org/t/processing-filtering-and-evaluating-the-silva-database-and-other-reference-sequence-data-with-rescript/15494">link</a> provides some of those examples and command to do that using <code>RESCRIPt</code> plugin.</p>
 </section>
@@ -404,7 +415,22 @@ RESCRIPt error
 <h2 class="anchored" data-anchor-id="building-a-taxonomy-classifer">Building a taxonomy classifer</h2>
 <p>Now we will move to train a taxonomy classifier which we are going to use later in our analysis to assign taxonomy labels to sequence data. Before doing that we will select V4 region from the SILVA database and use that extracted database for training our classifier.</p>
 <p>This step of extracting V4 regions has been found to improve the performance.</p>
-<p><strong>Extract V4 region</strong></p>
+<section id="extract-v4-region" class="level3">
+<h3 class="anchored" data-anchor-id="extract-v4-region">Extract V4 region</h3>
+<p>This step extract the 16S region from the database using provided primers.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is recommeded to use the same primers used in the 16S extraction process of dataset under study.</p>
+</div>
+</div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">qiime</span> feature-classifier extract-reads <span class="dt">\</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--i-sequences</span> silva-138.1-ssu-nr99-seqs.qza <span class="dt">\</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--p-f-primer</span> GTGYCAGCMGCCGCGGTAA <span class="dt">\</span></span>
@@ -412,11 +438,15 @@ RESCRIPt error
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--p-n-jobs</span> 2 <span class="dt">\</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--p-read-orientation</span> <span class="st">'forward'</span> <span class="dt">\</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--o-reads</span> silva-138.1-ssu-nr99-seqs-515f-806r.qza</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Train the classifier</strong></p>
+</section>
+<section id="train-the-classifier" class="level3">
+<h3 class="anchored" data-anchor-id="train-the-classifier">Train the classifier</h3>
+<p>This step use a Naive-Bayes classifier and trains it on the extracted data from the previous step. The resultant classifier is stored as Qiime2 artifact which can be readily used for classification tasks using Qiime2.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">qiime</span> feature-classifier fit-classifier-naive-bayes <span class="dt">\</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--i-reference-reads</span> silva-138.1-ssu-nr99-seqs-515f-806r.qza <span class="dt">\</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--i-reference-taxonomy</span> silva-138.1-ssu-nr99-tax.qza <span class="dt">\</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--o-classifier</span> silva_classifier.qza</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="references" class="level1 unnumbered">
 <h1 class="unnumbered">References</h1>
